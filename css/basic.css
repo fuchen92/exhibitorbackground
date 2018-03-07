@@ -23,6 +23,25 @@ img {
 ul, ol, li {
     list-style: none;
 }
+input, button, textarea, select {
+    box-sizing: border-box;
+    border: 0;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 2px;
+    font-family: Arial, "Microsoft Yahei";
+}
+select::-ms-expand { display: none; } 
+select {
+    background-image: url(img/caret.png);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    color: #181818;
+}
 .container {
     width: 90%;
     height: 100%;
@@ -117,7 +136,7 @@ nav > .container {
 
 /********** 公共侧边栏菜单 **********/
 .menu {
-    width: 200px;
+    width: 150px;
 }
 .menu-list {
     margin-bottom: 60px;
@@ -133,4 +152,64 @@ nav > .container {
     font-size: 16px;
     line-height: 25px;
     color: #333333;
+}
+
+/********** 公共右侧内容容器 **********/
+.page-content {
+    width: calc(100% - 155px);
+    width: -webkit-calc(100% - 155px);
+    width: -moz-calc(100% - 155px);
+}
+.menu-title {
+    box-sizing: border-box;
+    height: 55px;
+    padding: 15px 0;
+    color: #181818;
+    background-color: #fff;
+}
+.menu-title > .container {
+    width: 98%;
+}
+.menutitle-text {
+    font-size: 16px;
+    line-height: 25px;
+}
+.main-content {
+    margin-top: 15px;
+    padding: 15px 0 60px;
+    background-color: #fff;
+}
+.main-content > .container {
+    width: 98%;
+}
+.content-tab {
+    height: 40px;
+    overflow: hidden;
+}
+.contenttab-item {
+    height: 40px;
+    margin-right: 50px;
+}
+.tab-link {
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 10px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    color: #494949;
+}
+.tab-link.active {
+    color: #C30F23;
+    border-bottom-color: #C30F23;
+}
+.tab-label {
+    display: inline-block;
+    vertical-align: top;
+    padding: 2px 5px;
+    font-size: 12px;
+    line-height: normal;
+    color: #fff;
+    font-weight: normal;
+    background-color: #E54144;
+    border-radius: 100px;
 }

@@ -1,3 +1,152 @@
 /********** 展商信息 **********/
 
 /***** 产品信息  *****/
+.product-list {
+    margin-top: 25px;
+    text-align: center;
+}
+.product-row {
+    box-sizing: border-box;
+    height: 145px;
+    padding: 32px 0;
+    border-bottom: 1px solid #F8F5F0;    
+}
+.product-row::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.bgrow {
+    height: 50px;
+    padding: 0;
+    background-color: #EEEEEE;
+    border-bottom: 0;
+}
+.column-1 {
+    width: 10%;
+}
+.column-2 {
+    width: 15%;
+}
+.column-3 {
+    width: 20%;
+}
+.column-4 {
+    width: 30%;
+}
+.column-5 {
+    width: 25%;
+}
+.column-large {
+    width: 100%;
+}
+.product-thead {
+    font-size: 15px;
+    line-height: 20px;
+    color: #181818;
+    margin-top: 15px;
+}
+.question-mark {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    top: -5px;
+    line-height: 15px;
+    font-size: 12px;
+    border: 1px solid #181818;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.explain {
+    position: absolute;
+    display: none;  
+}
+.productId, .productName {
+    display: block;
+    line-height: 80px;
+}
+.product-logo {
+    display: inline-block;
+    width: 145px;
+    height: 80px;
+    background-color: grey;
+}
+.product-desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.edit, .del {
+    display: inline-block;
+    width: 30px;
+    line-height: 25px;
+    margin-top: 22px;
+    cursor: pointer;   
+}
+.edit {
+    color: #C30F23;
+    margin-right: 20px;     
+}
+.moveup, .movedown {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    margin-top: 22px;
+    cursor: pointer;
+}
+.moveup::after, .movedown::after {
+    display: block;
+    position: absolute;
+    left: 12px;
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-left: 1px solid #767676;
+    border-bottom: 1px solid #767676;
+}
+.moveup::after {
+    top: 12px;    
+    transform: rotate(-45deg);
+}
+.movedown::after {
+    top: 16px;    
+    transform: rotate(135deg);
+}
+.empty-text {
+    font-size: 15px;
+    line-height: 30px;
+    color: #777777;
+    margin-top: 25px;
+}
+.addProduct {
+    height: 25px;
+    color: #C30F23;
+    border-bottom: 1px solid #C30F23;
+}
+.attention {
+    margin-top: 25px;
+    overflow: hidden;
+}
+.attention-text {
+    font-size: 14px;
+    line-height: 40px;
+    color: #777777;
+}
+.addProductBtn {
+    width: 165px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    color: #C30F23;
+    border: 1px solid #C30F23;
+    background-color: #fff;
+    cursor: pointer;
+}
