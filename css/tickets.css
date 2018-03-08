@@ -1,3 +1,395 @@
 /********** 门票信息 **********/
 
+/* 本页面的一些公共样式 */
+.ticket-count {
+    color: #E54144;
+}
+.form-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.form-item {
+    width: 45%;
+    height: 65px;
+}
+.allot-input, .allot-select {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    padding: 0 10px;
+    border: 1px solid #D3D3D3;
+    background-color: #F8F8F8;
+    color: #565656;
+    border-radius: 2px;
+}
+.form-tips {
+    height: 20px;
+    line-height: 20px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: red;
+    display: none;
+}
+.form-desc {
+    padding: 0 13px;
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 5px;
+    color: #858585;
+    display: none;
+}
+.form-desc::before {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border: 4px transparent solid;
+    border-bottom: 4px #858585 solid;
+    margin-top: -4px;
+    margin-right: 8px;
+    zoom: 1;
+}
+
 /***** 参会嘉宾登记  *****/
+.allot-desc {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    color: #C30F23;
+    background-color: #FDF3F5;
+    margin-bottom: 25px;
+}
+.tickets-privilege-text {
+    border-bottom: 1px solid #C30F23;
+}
+.graybg {
+    height: 50px;
+    background-color: #EEEEEE;
+}
+.allot-table {
+    width: 99.9%;
+    text-align: center;
+    border-collapse: collapse;
+    margin: -50px 0 30px;
+    table-layout: fixed;
+}
+.thead {
+    height: 50px;
+}
+.thead > th {
+    font-size: 15px;
+    font-weight: normal;
+}
+.white-divide {
+    height: 15px;
+    background-color: #fff;
+}
+.hasborder {
+    border: 1px solid #DEDEDE;
+}
+td {
+    height: 55px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+tr td.allotId, tr td.nameCN, tr td.sex, tr td.jobCN, tr td.allotType, tr td.allotManage {
+    width: 5%;
+}
+tr td.companyCN, tr td.mobile, tr td.email {
+    width: 22%;
+}
+.ticket-type {
+    padding: 0px 8px;
+    border: 1px solid #DEDEDE;
+    border-radius: 20px;
+}
+.already-allot {
+    font-size: 15px;
+    border: none;
+    background-color: #EEEEEE;
+    color: #333333;    
+}
+.changeBtn {
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #fff;
+    color: #C30F23;
+    cursor: pointer;
+}
+.audit-status {
+    color: #999999;
+    cursor: not-allowed;
+}
+.audit-tips {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    line-height: 20px;
+    background-color: #C1C1C1;
+    font-size: 14px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+.audittip-text {
+    position: absolute;
+    height: 25px;
+    line-height: 25px;
+    top: -35px;
+    right: -5px;
+    font-size: 12px;
+    padding: 0 10px;
+    border-radius: 2px;
+    background-color: #EEEEEE;
+    color: #181818;
+    display: none;
+}
+.audittip-text::after {
+    position: absolute;
+    content: "";
+    border: 8px solid #EEEEEE;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-width: 10px;
+    top: 22px;
+    right: 5px;
+}
+.audit-tips:hover .audittip-text {
+    display: block;
+}
+.allot-tips {
+    box-sizing: border-box;
+    /* height: 50px; */
+    font-size: 15px;
+    /* line-height: 50px; */
+    padding: 0 15px;
+    border: 1px solid #DEDEDE;
+    margin-bottom: 40px;
+}
+.allottips-item {
+    height: 30px;
+    line-height: 30px;
+}
+.ticket-link {
+    color: #C30F23;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*** 门票权益对话框 ***/
+.privileges {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.privileges-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.privileges-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    /* height: 155px; */
+    background-color: #fff;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+}
+.close-privileges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.privileges-title {
+    box-sizing: border-box;
+    height: 45px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 44px;
+    font-weight: normal;
+}
+.privileges-item {
+    box-sizing: border-box;
+    line-height: 20px;
+    padding: 20px;
+}
+#cancelPrivileges {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 auto 20px;
+    padding: 0 15px;
+    background-color: #C30F23;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*** 修改分配信息对话框 ***/
+.btn-group {
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.changeAllot-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.changeAllot-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.changeAllot-close {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px;
+    cursor: pointer;
+}
+.changeAllot-form {
+    margin-top: 20px;
+}
+.changeAllot-form .form-group {
+    margin-bottom: 10px;
+}
+.changeAllot-form .form-item {
+    /* height: 60px; */
+}
+.changeAllot-form .form-tips {
+    margin-top: 0;
+}
+.changeAllot-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.submitChangeAllot {
+    display: block;
+    width: 180px;
+    height: 40px;
+    background-color: #C30F23;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+    margin: 20px auto 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*** 分配门票浮窗 ***/
+.allotDialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.allotDialog-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.allotDialog-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 620px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.allot-title {
+    box-sizing: border-box;
+    height: 45px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 44px;
+    font-weight: normal;
+}
+.allotDialog-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.allotLists {
+    padding: 25px 40px 0;
+    height: 520px;
+    overflow-y: scroll;
+}
+.addallot-form:not(:nth-last-of-type(1)) {
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 55px;
+    padding-bottom: 20px;
+}
+#allotDialog .btn-group {
+    text-align: right;
+    margin-bottom: 0px;
+}
+.allotBtn {
+    box-sizing: border-box;
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #C30F23;
+    color: #fff;
+}
+#saveAllot {
+    width: 150px;
+    margin-right: 20px;
+}
+#addAnother {
+    background-color: #fff;
+    border: 1px solid #C30F23;
+    color: #C30F23;
+}

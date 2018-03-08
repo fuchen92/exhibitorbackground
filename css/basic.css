@@ -153,6 +153,9 @@ nav > .container {
     line-height: 25px;
     color: #333333;
 }
+.menu-item.active {
+    color: #C30F23;
+}
 
 /********** 公共右侧内容容器 **********/
 .page-content {
@@ -213,4 +216,82 @@ nav > .container {
     font-weight: normal;
     background-color: #E54144;
     border-radius: 100px;
+}
+
+/********** 公共固定右侧联系方式 **********/
+.fixedcontact {
+    position: fixed;
+    bottom: 150px;
+    right: 0;
+    width: 90px;
+    height: 115px;
+    background-color: #fff;
+    border: 1px solid #C1C1C1;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-icon {
+    box-sizing: border-box;
+    display: block;
+    /* width: 35px;
+    height: 35px; */
+    margin: 10px auto;
+}
+.contact-tips {
+    text-align: center;
+    color: #181818;
+    font-size: 14px;
+}
+.contact-box {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 110px;
+    width: 190px;
+    height: 135px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #C1C1C1;
+    /* border-right: 0; */
+    display: none;    
+}
+.contact-box::after {
+    position: absolute;
+    content: "";
+    width: 15px;
+    top: 55px;
+    right: -8px;
+    height: 15px;
+    background-color: #fff;
+    border: 1px solid #C1C1C1;
+    border-left-color: #fff;
+    border-bottom-color: #fff;
+    transform: rotate(45deg);
+}
+.contact-item:not(:last-child) {
+    margin-bottom: 15px;
+}
+.contact-label {
+    line-height: 25px;
+    padding-left: 30px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 25px auto;
+}
+.serviceTel {
+    background-image: url(img/tel.png);
+}
+.serviceTime {
+    background-image: url(img/time.png);
+    background-size: 20px;
+}
+.contact-tel {
+    color: #C30F23;
+}
+.contact-desc {
+    font-size: 12px;
+    line-height: 20px;
+}
+.fixedcontact:hover .contact-box {
+    display: block;
 }

@@ -51,7 +51,7 @@
                 <div class="menu-list">
                     <h2 class="menu-category icon-ticket">门票信息</h2>
                     <a class="menu-item" href="">工作人员登记</a>
-                    <a class="menu-item" href="">参会嘉宾登记</a>
+                    <a class="menu-item active" href="attendees.html">参会嘉宾登记</a>
                 </div>
                 <div class="menu-list">
                     <h2 class="menu-category icon-account">账户管理</h2>
@@ -82,9 +82,383 @@
                                 <b class="tab-label">未填写</b>
                             </li>
                         </ul>
+                        <p class="allot-desc">
+                            参会嘉宾的分配人数和票类是按贵司的合同约定所确定的。
+                            <span id="ticketsPrivilege" class="tickets-privilege-text">了解门票权益 &gt;&gt;</span>
+                        </p>
+                        <div class="allot-list">
+                            <div class="graybg"></div>
+                            <table id="allotTable" class="allot-table" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="thead">
+                                        <th>&nbsp;</th>
+                                        <th>序号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>公司</th>
+                                        <th>职位</th>
+                                        <th>手机</th>
+                                        <th>邮箱</th>
+                                        <th>门票类别</th>
+                                        <th>管理</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="white-divide" colspan="10"></td>
+                                    </tr>
+                                    <!-- 已登记情况 -->
+                                    <tr class="hasborder" style="border: 0;">
+                                        <td id="alreadyAllot" class="already-allot" rowspan="5">已登记信息</td>
+                                        <td colspan="9" style="border: 0; height: 0;"></td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="zhangsan" data-companyen="gonganju" data-joben="jingcha" data-tel="110" data-industry="76" data-function="3" data-sex="1">
+                                        <td class="allotId">1</td>
+                                        <td class="nameCN">张三</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">公安局公安局公安局公安局公安局公安局</td>
+                                        <td class="jobCN">警察</td>
+                                        <td class="mobile">15958144601</td>
+                                        <td class="email">110@qq.com</td>
+                                        <td class="allotType">
+                                            <span class="ticket-type">VIP票</span>
+                                        </td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="lisi" data-companyen="yiyuan" data-joben="yisheng" data-tel="120" data-industry="76" data-function="3" data-sex="1">
+                                        <td class="allotId">2</td>
+                                        <td class="nameCN">李四</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">医院</td>
+                                        <td class="jobCN">医生</td>
+                                        <td class="mobile">15958144602</td>
+                                        <td class="email">120@qq.com</td>
+                                        <td class="allotType">
+                                            <span class="ticket-type">VIP票</span>
+                                        </td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="wangwu" data-companyen="xiaofangju" data-joben="huojing" data-tel="119" data-industry="76" data-function="3" data-sex="1">
+                                        <td class="allotId">3</td>
+                                        <td class="nameCN">王五</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">消防局</td>
+                                        <td class="jobCN">火警</td>
+                                        <td class="mobile">15958144603</td>
+                                        <td class="email">119@qq.com</td>
+                                        <td class="allotType">
+                                            <span class="ticket-type">VIP票</span>
+                                        </td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <span class="audit-status">已审核</span>
+                                            <span class="audit-tips">
+                                                ?
+                                                <span class="audittip-text">您的参会信息已审核确认，如需更改，请致电联系我们 020-28829750 register@traveldaily.cn</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="zhaoliu" data-companyen="gongshangju" data-joben="juzhang" data-tel="12345" data-industry="76" data-function="3" data-sex="1">
+                                        <td class="allotId">4</td>
+                                        <td class="nameCN">赵六</td>
+                                        <td class="sex">男</td>
+                                        <td class="companyCN">工商局</td>
+                                        <td class="jobCN">局长</td>
+                                        <td class="mobile">15958144604</td>
+                                        <td class="email">12345@qq.com</td>
+                                        <td class="allotType">
+                                            <span class="ticket-type">VIP票</span>
+                                        </td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <span class="audit-status">已审核</span>
+                                            <span class="audit-tips">
+                                                ?
+                                                <span class="audittip-text">您的参会信息已审核确认，如需更改，请致电联系我们 020-28829750 register@traveldaily.cn</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="allot-tips">
+                                <p class="allottips-item" data-tickettype="1" data-ticketcount="1">
+                                    您可登记 <span class="ticket-count">1</span> 张VIP票参会嘉宾，现还剩 <span class="ticket-count">3</span> 人。 <span class="ticket-link">点击登记</span>
+                                </p>
+                                <p class="allottips-item" data-tickettype="2" data-ticketcount="2">
+                                    您可登记 <span class="ticket-count">2</span> 张直通票参会嘉宾，现还剩 <span class="ticket-count">3</span> 人。 <span class="ticket-link">点击登记</span>
+                                </p>
+                                <p class="allottips-item" data-tickettype="3" data-ticketcount="1">
+                                    您可登记 <span class="ticket-count">1</span> 张普通票参会嘉宾，现还剩 <span class="ticket-count">3</span> 人。 <span class="ticket-link">点击登记</span>
+                                </p>
+                                <p class="allottips-item" data-tickettype="4" data-ticketcount="4">
+                                    您可登记 <span class="ticket-count">4</span> 张展览票参会嘉宾，现还剩 <span class="ticket-count">3</span> 人。 <span class="ticket-link">点击登记</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- 门票权益对话框 -->
+    <div id="privileges" class="privileges">
+        <div class="privileges-bg"></div>
+        <div class="privileges-wrapper">
+            <div id="closePrivileges" class="close-privileges">×</div>
+            <h3 class="privileges-title">门票权益</h3>
+            <p class="privileges-item">
+                VIP票：峰会+展览+VIP午餐 &amp; VIP晚宴
+            </p>
+            <!-- <p class="privileges-item">
+                直通票：峰会+展览+午餐
+            </p>
+            <p class="privileges-item">
+                普通票：峰会+展览（不含餐）
+            </p>
+            <p class="privileges-item">
+                展览票：仅展览,不含峰会门票
+            </p> -->
+            <button id="cancelPrivileges" class="cancelBtn" type="button">我知道了</button>
+        </div>
+    </div>
+    <!-- 固定右侧联系信息 -->
+    <div class="fixedcontact">
+        <img class="contact-icon" src="css/img/contact.png">
+        <p class="contact-tips">有问题？<br>联系我们</p>
+        <div class="contact-box">
+            <div class="contact-item">
+                <p class="contact-label serviceTel">联系电话</p>
+                <p class="contact-desc contact-tel">020-28829750</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-label serviceTime">服务时间</p>
+                <p class="contact-desc">工作日 9：30-18：00</p>
+            </div>
+        </div>
+    </div>
+    <!-- 修改分配信息对话框 -->
+    <div id="changeDialog" class="changeAllot-dialog">
+        <div class="changeAllot-bg"></div>
+        <div class="changeAllot-content">
+            <div id="closeDialog" class="changeAllot-close">×</div>
+            <ul id="changeForm" class="changeAllot-form">
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文姓名" data-role="[{ &quot;name&quot;: &quot;中文姓名&quot; }]">
+                        <p class="form-tips">请输入中文姓名</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文姓名" data-role="[{ &quot;name&quot;: &quot;英文姓名&quot; }]">
+                        <p class="form-tips">请输入英文姓名</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文公司名称" data-role="[{ &quot;name&quot;: &quot;中文公司名称&quot; }]">
+                        <p class="form-tips">请输入中文公司名称</p>
+                        <p class="form-desc">将展示在参会胸牌， 8 个汉字内为宜</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文公司名称" data-role="[{ &quot;name&quot;: &quot;英文公司名称&quot; }]">
+                        <p class="form-tips">请输入英文公司名称</p>
+                        <p class="form-desc">将展示在胸牌，请区分大小写，18 个字母内为宜</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文职位名称" data-role="[{ &quot;name&quot;: &quot;中文职位名称&quot; }]">
+                        <p class="form-tips">请输入中文职位名称</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文职位名称" data-role="[{ &quot;name&quot;: &quot;英文职位名称&quot; }]">
+                        <p class="form-tips">请输入英文职位名称</p>
+                        <p class="form-desc">请区分大小写</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input id="changeMobile" class="allot-input" type="text" placeholder="手机号码" data-role="[{ &quot;name&quot;: &quot;手机号码&quot;, &quot;reg&quot;: &quot;/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/&quot; }]">
+                        <p class="form-tips">请输入手机号码</p>
+                        <p class="form-desc">请填写参会人手机号码以便接收通知</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="固话号码" data-role="[{ &quot;name&quot;: &quot;固话号码&quot; }]">
+                        <p class="form-tips">请输入固话号码</p>
+                        <p class="form-desc">格式：010-12345678-001</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input id="changeEmail" class="allot-input" type="text" placeholder="Email地址" data-role="[{ &quot;name&quot;: &quot;Email地址&quot;, &quot;reg&quot;: &quot;/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/&quot; }]">
+                        <p class="form-tips">请输入Email邮箱地址</p>
+                        <p class="form-desc">请填写参会人Email地址以便接收通知</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="changeIndustry" class="allot-select" data-role="[{ &quot;name&quot;: &quot;行业&quot; }]">
+                            <option value="0">请选择所在行业</option>
+                            <option value="77">航空公司</option>
+                            <option value="78">酒店</option>
+                            <option value="79">OTA/旅游搜索引擎</option>
+                            <option value="143">GDS</option>
+                            <option value="140">公寓/非标准住宿业（民宿等）</option>
+                            <option value="80">旅行社/机票代理人</option>
+                            <option value="81">景区/目的地</option>
+                            <option value="82">旅游局</option>
+                            <option value="83">邮轮</option>
+                            <option value="84">租车/用车</option>
+                            <option value="144">B2B分销平台/批发商</option>
+                            <option value="145">社区/攻略/点评网站</option>
+                            <option value="146">行程规划/定制游</option>
+                            <option value="147">旅游地产</option>
+                            <option value="203">TMC/MICE</option>
+                            <option value="204">综合性旅游文化企业</option>
+                            <option value="73">旅游科技（如 PMS、B2B分销技术、呼叫中心、云服务等）</option>
+                            <option value="72">数字营销（如 SEO、社交媒体营销、用户体验设计等）</option>
+                            <option value="74">商务服务（如保险、投融资、管理/咨询等）</option>
+                            <option value="75">媒体</option>
+                            <option value="76">其他</option>
+                        </select>
+                        <p class="form-tips">请选择行业</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <select id="changeFunction" class="allot-select" data-role="[{ &quot;name&quot;: &quot;职能&quot; }]">
+                            <option value="0">请选择职能</option>
+                            <option value="1">高层管理</option>
+                            <option value="2">市场</option>
+                            <option value="3">营销</option>
+                        </select>
+                        <p class="form-tips">请选择职能</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="changeSex" class="allot-select" data-role="[{ &quot;name&quot;: &quot;称谓&quot; }]">
+                            <option value="0">请选择性别</option>
+                            <option value="1">先生</option>
+                            <option value="2">女士</option>
+                        </select>
+                        <p class="form-tips">请选择性别</p>
+                    </div>
+                </li>
+            </ul>
+            <button id="submitChangeAllot" class="submitChangeAllot">确认修改</button>
+        </div>
+    </div>
+    <!-- 分配门票浮窗 -->
+    <div id="allotDialog" class="allotDialog">
+        <div class="allotDialog-bg"></div>
+        <div class="allotDialog-content">
+            <div id="closeAllotDialog" class="allotDialog-close">×</div>
+            <h3 id="allotTitle" class="allot-title">直通票嘉宾分配</h3>
+            <div id="noAllot" class="allotLists">
+                <ul class="addallot-form">
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input" type="text" placeholder="中文姓名" data-role="[{ &quot;name&quot;: &quot;中文姓名&quot; }]">
+                            <p class="form-tips"></p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input" type="text" placeholder="英文姓名" data-role="[{ &quot;name&quot;: &quot;英文姓名&quot; }]">
+                            <p class="form-tips"></p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input" type="text" placeholder="中文公司名称" data-role="[{ &quot;name&quot;: &quot;中文公司名称&quot; }]">
+                            <p class="form-tips"></p>
+                            <p class="form-desc">将展示在参会胸牌， 8 个汉字内为宜</p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input" type="text" placeholder="英文公司名称" data-role="[{ &quot;name&quot;: &quot;英文公司名称&quot; }]">
+                            <p class="form-tips"></p>
+                            <p class="form-desc">将展示在胸牌，请区分大小写，18 个字母内为宜</p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input" type="text" placeholder="中文职位名称" data-role="[{ &quot;name&quot;: &quot;中文职位名称&quot; }]">
+                            <p class="form-tips"></p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input" type="text" placeholder="英文职位名称" data-role="[{ &quot;name&quot;: &quot;英文职位名称&quot; }]">
+                            <p class="form-tips"></p>
+                            <p class="form-desc">请区分大小写</p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input mobile" type="text" placeholder="手机号码" data-role="[{ &quot;name&quot;: &quot;手机号码&quot;, &quot;reg&quot;: &quot;/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/&quot; }]">
+                            <p class="form-tips"></p>
+                            <p class="form-desc">请填写参会人手机号码以便接收通知</p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input" type="text" placeholder="固话号码" data-role="[{ &quot;name&quot;: &quot;固话号码&quot; }]">
+                            <p class="form-tips"></p>
+                            <p class="form-desc">格式：010-12345678-001</p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input email" type="text" placeholder="Email地址" data-role="[{ &quot;name&quot;: &quot;Email地址&quot;, &quot;reg&quot;: &quot;/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/&quot; }]">
+                            <p class="form-tips"></p>
+                            <p class="form-desc">请填写参会人Email地址以便接收通知</p>
+                        </div>
+                        <div class="form-item rt">
+                            <select class="allot-select" data-role="[{ &quot;name&quot;: &quot;行业&quot; }]">
+                                <option value="0">请选择所在行业</option>
+                                <option value="77">航空公司</option>
+                                <option value="78">酒店</option>
+                                <option value="79">OTA/旅游搜索引擎</option>
+                                <option value="143">GDS</option>
+                                <option value="140">公寓/非标准住宿业（民宿等）</option>
+                                <option value="80">旅行社/机票代理人</option>
+                                <option value="81">景区/目的地</option>
+                                <option value="82">旅游局</option>
+                                <option value="83">邮轮</option>
+                                <option value="84">租车/用车</option>
+                                <option value="144">B2B分销平台/批发商</option>
+                                <option value="145">社区/攻略/点评网站</option>
+                                <option value="146">行程规划/定制游</option>
+                                <option value="147">旅游地产</option>
+                                <option value="203">TMC/MICE</option>
+                                <option value="204">综合性旅游文化企业</option>
+                                <option value="73">旅游科技（如 PMS、B2B分销技术、呼叫中心、云服务等）</option>
+                                <option value="72">数字营销（如 SEO、社交媒体营销、用户体验设计等）</option>
+                                <option value="74">商务服务（如保险、投融资、管理/咨询等）</option>
+                                <option value="75">媒体</option>
+                                <option value="76">其他</option>
+                            </select>
+                            <p class="form-tips"></p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <select class="allot-select" data-role="[{ &quot;name&quot;: &quot;职能&quot; }]">
+                                <option value="0">请选择职能</option>
+                                <option value="1">高层管理</option>
+                                <option value="2">市场</option>
+                                <option value="3">营销</option>
+                            </select>
+                            <p class="form-tips"></p>
+                        </div>
+                        <div class="form-item rt">
+                            <select class="allot-select" data-role="[{ &quot;name&quot;: &quot;称谓&quot; }]">
+                                <option value="0">请选择性别</option>
+                                <option value="1">先生</option>
+                                <option value="2">女士</option>
+                            </select>
+                            <p class="form-tips"></p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="btnGroup" class="btn-group">
+                    <button id="saveAllot" class="allotBtn">保存</button>
+                    <button id="addAnother" class="allotBtn">添加下一个</button>
+                </div>
+            </div>
+            
         </div>
     </div>
 </body>
