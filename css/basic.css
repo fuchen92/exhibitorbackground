@@ -185,6 +185,7 @@ nav > .container {
 .content-tab {
     height: 40px;
     overflow: hidden;
+    margin-bottom: 25px;
 }
 .contenttab-item {
     height: 40px;
