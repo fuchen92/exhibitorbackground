@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>门票--工作人员登记</title>
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/tickets.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-logos lt">
+                <img class="logo-tdc" src="css/img/logo-tdc-white.png">
+                <img class="logo-cdts" src="css/img/logo-cdts-white.png">
+            </div>
+            <b class="logo-divide lt"></b>
+            <h1 class="logo-desc lt">展商登录后台</h1>
+            <ul class="nav-list rt">
+                <li class="nav-item lt">
+                    <div class="navitem-caret">
+                        <img src="css/img/question.png">
+                    </div>
+                    <a class="navitem-text" href="faq.html">常见问题</a>
+                </li>
+                <li class="nav-item lt">
+                    <b class="divide"></b>
+                    <div class="navitem-caret">
+                        <img src="css/img/account.png">
+                    </div>
+                    <span class="navitem-text">travel@traveldaily.cn</span>
+                </li>
+                <li class="nav-item lt">
+                    <a class="loginout-btn" href="login.html">退出</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container">
+            <div class="menu lt">
+                <div class="menu-list">
+                    <h2 class="menu-category icon-exhibitor">展商信息</h2>
+                    <a class="menu-item" href="company.html">公司信息</a>
+                    <a class="menu-item" href="product.html">产品信息</a>
+                    <a class="menu-item" href="contact.html">联系信息</a>
+                </div>
+                <div class="menu-list">
+                    <h2 class="menu-category icon-ticket">门票信息</h2>
+                    <a class="menu-item active" href="staff.html">工作人员登记</a>
+                    <a class="menu-item" href="attendees.html">参会嘉宾登记</a>
+                </div>
+                <div class="menu-list">
+                    <h2 class="menu-category icon-account">账户管理</h2>
+                    <a class="menu-item" href="change-password.html">账户密码修改</a>
+                    <a class="menu-item" href="account-contact.html">账户联系人登记</a>
+                    <a class="menu-item" href="account-number.html">添加APP登录帐号</a>
+                </div>
+                <div class="menu-list">
+                    <h2 class="menu-category icon-help">帮助文件</h2>
+                    <a class="menu-item" href="download.html">文件下载</a>
+                </div>
+            </div>
+            <div class="page-content rt">
+                <div class="menu-title">
+                    <div class="container">
+                        <h3 class="menutitle-text">门票信息</h3>
+                    </div>                    
+                </div>
+                <div class="main-content">
+                    <div class="container">
+                        <ul class="content-tab">
+                            <li class="contenttab-item lt">
+                                <a class="tab-link active" href="staff.html">工作人员登记</a>
+                                <b class="tab-label">未填写</b>
+                            </li>
+                            <li class="contenttab-item lt">
+                                <a class="tab-link" href="attendees.html">参会嘉宾登记</a>
+                                <b class="tab-label">未填写</b>
+                            </li>
+                        </ul>
+                        <p class="staff-desc">
+                            工作人员证件可提前进场布置展位，工作人员数量是按和贵司的合同约定所分配的。
+                        </p>
+                        <div class="staff-list">
+                            <div class="graybg"></div>
+                            <table id="staffTable" class="staff-table" cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr class="thead">
+                                        <th>&nbsp;</th>
+                                        <th>序号</th>
+                                        <th>姓名</th>
+                                        <th>性别</th>
+                                        <th>职位</th>
+                                        <th>手机</th>
+                                        <th>邮箱</th>
+                                        <th>管理</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="white-divide" colspan="8"></td>
+                                    </tr>
+                                    <!-- 已登记情况 -->
+                                    <tr class="hasborder" style="border: 0;">
+                                        <td id="alreadyCheck" class="already-allot" rowspan="5">已登记信息</td>
+                                        <td colspan="7" style="border: 0; height: 0;"></td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="zhangsan" data-joben="jingcha" data-function="3" data-sex="1">
+                                        <td class="allotId">1</td>
+                                        <td class="nameCN">张三</td>
+                                        <td class="sex">男</td>
+                                        <td class="jobCN">警察警察警察警察警察警察警察警察警察警察</td>
+                                        <td class="mobile">15958144601</td>
+                                        <td class="email">110@qq.com</td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="lisi" data-joben="yisheng" data-function="3" data-sex="1">
+                                        <td class="allotId">2</td>
+                                        <td class="nameCN">李四</td>
+                                        <td class="sex">男</td>
+                                        <td class="jobCN">医生</td>
+                                        <td class="mobile">15958144602</td>
+                                        <td class="email">120@qq.com</td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <button class="changeBtn">修改</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="wangwu" data-joben="huojing" data-function="3" data-sex="1">
+                                        <td class="allotId">3</td>
+                                        <td class="nameCN">王五</td>
+                                        <td class="sex">男</td>
+                                        <td class="jobCN">火警</td>
+                                        <td class="mobile">15958144603</td>
+                                        <td class="email">119@qq.com</td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <span class="audit-status">已审核</span>
+                                            <span class="audit-tips">
+                                                ?
+                                                <span class="audittip-text">您的参会信息已审核确认，如需更改，请致电联系我们 020-28829750 register@traveldaily.cn</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="hasborder alloted" data-nameen="zhaoliu" data-joben="juzhang" data-function="3" data-sex="1">
+                                        <td class="allotId">4</td>
+                                        <td class="nameCN">赵六</td>
+                                        <td class="sex">男</td>
+                                        <td class="jobCN">局长</td>
+                                        <td class="mobile">15958144604</td>
+                                        <td class="email">12345@qq.com</td>
+                                        <td class="allotManage" style="overflow: visible;">
+                                            <span class="audit-status">已审核</span>
+                                            <span class="audit-tips">
+                                                ?
+                                                <span class="audittip-text">您的参会信息已审核确认，如需更改，请致电联系我们 020-28829750 register@traveldaily.cn</span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="checkIn">
+                                <p class="checkIn-text lt">注：本次TDC峰会&CDTS展上，您最多可以登记 4 名工作人员，现还剩 <span class="checkIn-count">2</span> 人可登记。</p>
+                                <button class="checkInBtn rt">继续登记</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 固定右侧联系信息 -->
+    <div class="fixedcontact">
+        <img class="contact-icon" src="css/img/contact.png">
+        <p class="contact-tips">有问题？<br>联系我们</p>
+        <div class="contact-box">
+            <div class="contact-item">
+                <p class="contact-label serviceTel">联系电话</p>
+                <p class="contact-desc contact-tel">020-28829750</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-label serviceTime">服务时间</p>
+                <p class="contact-desc">工作日 9：30-18：00</p>
+            </div>
+        </div>
+    </div>
+    <!-- 分配工作人员 -->
+    <div id="allotDialog" class="allotDialog">
+        <div class="allotDialog-bg"></div>
+        <div class="allotDialog-content staff-content">
+            <div id="closeAllotDialog" class="allotDialog-close">×</div>
+            <h3 id="allotTitle" class="allot-title">工作人员分配</h3>
+            <div id="noAllot" class="allotLists staffLists">
+                <ul class="addallot-form">
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input" type="text" placeholder="中文姓名" data-role='[{ "name": "中文姓名" }]'>
+                            <p class="form-tips"></p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input" type="text" placeholder="英文姓名" data-role='[{ "name": "英文姓名" }]'>
+                            <p class="form-tips"></p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input" type="text" placeholder="中文职位名称" data-role='[{ "name": "中文职位名称" }]'>
+                            <p class="form-tips"></p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input" type="text" placeholder="英文职位名称" data-role='[{ "name": "英文职位名称" }]'>
+                            <p class="form-tips"></p>
+                            <p class="form-desc">请区分大小写</p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <input class="allot-input mobile" type="text" placeholder="手机号码" data-role='[{ "name": "手机号码", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
+                            <p class="form-tips"></p>
+                            <p class="form-desc">请填写参会人手机号码以便接收通知</p>
+                        </div>
+                        <div class="form-item rt">
+                            <input class="allot-input email" type="text" placeholder="Email地址" data-role='[{ "name": "Email地址", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
+                            <p class="form-tips"></p>
+                            <p class="form-desc">请填写参会人Email地址以便接收通知</p>
+                        </div>
+                    </li>
+                    <li class="form-group">
+                        <div class="form-item lt">
+                            <select class="allot-select" data-role='[{ "name": "职能" }]'>
+                                <option value="0">请选择职能</option>
+                                <option value="1">高层管理</option>
+                                <option value="2">市场</option>
+                                <option value="3">营销</option>
+                            </select>
+                            <p class="form-tips"></p>
+                        </div>
+                        <div class="form-item rt">
+                            <select class="allot-select" data-role='[{ "name": "称谓" }]'>
+                                <option value="0">请选择性别</option>
+                                <option value="1">先生</option>
+                                <option value="2">女士</option>
+                            </select>
+                            <p class="form-tips"></p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="btnGroup" class="btn-group">
+                    <button id="saveAllot" class="allotBtn">保存</button>
+                    <button id="addAnother" class="allotBtn">添加下一个</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

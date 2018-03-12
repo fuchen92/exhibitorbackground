@@ -52,7 +52,7 @@
 }
 
 /***** 参会嘉宾登记  *****/
-.allot-desc {
+.allot-desc, .staff-desc {
     height: 45px;
     line-height: 45px;
     padding: 0 15px;
@@ -67,7 +67,7 @@
     height: 50px;
     background-color: #EEEEEE;
 }
-.allot-table {
+.allot-table, .staff-table {
     width: 99.9%;
     text-align: center;
     border-collapse: collapse;
@@ -392,4 +392,31 @@ tr td.companyCN, tr td.mobile, tr td.email {
     background-color: #fff;
     border: 1px solid #C30F23;
     color: #C30F23;
+}
+
+/***** 工作人员登记  *****/
+.checkIn {
+    overflow: hidden;
+}
+.checkIn-text {
+    color: #777777;
+    line-height: 40px;
+}
+.checkInBtn {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 40px;
+    font-size: 15px;
+    background-color: #fff;
+    border: 1px solid #C30F23;
+    color: #C30F23;
+    border-radius: 2px;
+}
+
+/*** 分配工作人员浮窗 ***/
+.staff-content {
+    height: 480px;
+}
+.staffLists {
+    height: 360px;
 }
