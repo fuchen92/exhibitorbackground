@@ -42,6 +42,9 @@ select {
     background-position: right 10px center;
     color: #181818;
 }
+input:focus, select:focus {
+    border: 1px solid #565656;
+}
 .container {
     width: 90%;
     height: 100%;
@@ -145,7 +148,21 @@ nav > .container {
     font-size: 16px;
     line-height: 25px;
     color: #333333;
-    padding-left: 16px;
+    padding-left: 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.icon-exhibitor {
+    background-image: url(img/menu-icon1.png);
+}
+.icon-ticket {
+    background-image: url(img/menu-icon2.png);
+}
+.icon-account {
+    background-image: url(img/menu-icon3.png);
+}
+.icon-help {
+    background-image: url(img/menu-icon4.png);
 }
 .menu-item {
     display: block;
