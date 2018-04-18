@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -86,9 +86,72 @@
                                 <b class="tab-label">未填写</b>
                             </li>
                         </ul>
+                        <ul class="contact-form" id="contactForm">
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    联系人姓名：
+                                </span>
+                                <input type="text" class="contact-input" data-role='[{ "name": "联系人姓名" }]'>
+                                <span class="errTip">请填写联系人姓名</span>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    联系手机：
+                                </span>
+                                <input type="text" class="contact-input" data-role='[{ "name": "联系手机", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
+                                <span class="errTip">请填写联系手机</span>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    联系邮箱：
+                                </span>
+                                <input type="text" class="contact-input" data-role='[{ "name": "联系邮箱", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
+                                <span class="errTip">请填写联系邮箱</span>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    官网：
+                                </span>
+                                <input type="text" class="contact-input" data-role='[{ "name": "官网" }]'>
+                                <span class="errTip">请填写官网</span>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label"></span>
+                                <button class="submitBtn">修改</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- 固定右侧联系信息 -->
+    <div class="fixedcontact">
+        <img class="contact-icon" src="css/img/contact.png">
+        <p class="contact-tips">有问题？<br>联系我们</p>
+        <div class="contact-box">
+            <div class="contact-item">
+                <p class="contact-label serviceTel">联系电话</p>
+                <p class="contact-desc contact-tel">020-28829750</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-label serviceTime">服务时间</p>
+                <p class="contact-desc">工作日 9：30-18：00</p>
+            </div>
+        </div>
+    </div>
+    <!-- 修改成功对话框 -->
+    <div class="successDialog">
+        <div class="successDialog-bg"></div>
+        <div class="successDialog-wrapper">
+            <div class="successDialog-close">×</div>
+            <h3 class="successDialog-title">联系信息</h3>
+            <p class="successDialog-desc">信息更新成功！</p>
+            <button class="cancelSuccessDialog">确定</button>
         </div>
     </div>
 </body>
