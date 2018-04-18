@@ -87,7 +87,7 @@
                         </p>
                         <div class="staff-list">
                             <div class="graybg"></div>
-                            <table id="staffTable" class="staff-table" cellspacing="0" cellpadding="0">
+                            <table id="allotTable" class="staff-table" cellspacing="0" cellpadding="0">
                                 <thead>
                                     <tr class="thead">
                                         <th>&nbsp;</th>
@@ -188,6 +188,68 @@
             </div>
         </div>
     </div>
+    <!-- 修改分配信息对话框 -->
+    <div id="changeDialog" class="changeAllot-dialog">
+        <div class="changeAllot-bg"></div>
+        <div class="changeAllot-content">
+            <div id="closeDialog" class="changeAllot-close">×</div>
+            <ul id="changeForm" class="changeAllot-form">
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文姓名" data-role='[{ "name": "中文姓名" }]'>
+                        <p class="form-tips">请输入中文姓名</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文姓名" data-role='[{ "name": "英文姓名" }]'>
+                        <p class="form-tips">请输入英文姓名</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input class="allot-input" type="text" placeholder="中文职位名称" data-role='[{ "name": "中文职位名称" }]'>
+                        <p class="form-tips">请输入中文职位名称</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input class="allot-input" type="text" placeholder="英文职位名称" data-role='[{ "name": "英文职位名称" }]'>
+                        <p class="form-tips">请输入英文职位名称</p>
+                        <p class="form-desc">请区分大小写</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <input id="changeMobile" class="allot-input" type="text" placeholder="手机号码" data-role='[{ "name": "手机号码", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
+                        <p class="form-tips">请输入手机号码</p>
+                        <p class="form-desc">请填写参会人手机号码以便接收通知</p>
+                    </div>
+                    <div class="form-item rt">
+                        <input id="changeEmail" class="allot-input" type="text" placeholder="Email地址" data-role='[{ "name": "Email地址", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
+                        <p class="form-tips">请输入Email邮箱地址</p>
+                        <p class="form-desc">请填写参会人Email地址以便接收通知</p>
+                    </div>
+                </li>
+                <li class="form-group">
+                    <div class="form-item lt">
+                        <select id="changeFunction" class="allot-select" data-role='[{ "name": "职能" }]'>
+                            <option value="0">请选择职能</option>
+                            <option value="1">高层管理</option>
+                            <option value="2">市场</option>
+                            <option value="3">营销</option>
+                        </select>
+                        <p class="form-tips">请选择职能</p>
+                    </div>
+                    <div class="form-item rt">
+                        <select id="changeSex" class="allot-select" data-role='[{ "name": "称谓" }]'>
+                            <option value="0">请选择性别</option>
+                            <option value="1">先生</option>
+                            <option value="2">女士</option>
+                        </select>
+                        <p class="form-tips">请选择性别</p>
+                    </div>
+                </li>
+            </ul>
+            <button id="submitChangeAllot" class="submitChangeAllot">确认修改</button>
+        </div>
+    </div>
     <!-- 分配工作人员 -->
     <div id="allotDialog" class="allotDialog">
         <div class="allotDialog-bg"></div>
@@ -256,5 +318,8 @@
             </div>
         </div>
     </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/staff.js"></script>
 </body>
 </html>

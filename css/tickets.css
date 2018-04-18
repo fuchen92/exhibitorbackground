@@ -62,6 +62,7 @@
 }
 .tickets-privilege-text {
     border-bottom: 1px solid #C30F23;
+    cursor: pointer;
 }
 .graybg {
     height: 50px;

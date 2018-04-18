@@ -1,8 +1,9 @@
 /********** 联系信息 **********/
 .form-group {
     margin-bottom: 15px;
+    min-height: 20px;
 }
-.form-label, .contact-input, .errTip {
+.form-label, .contact-input {
     display: inline-block;
     vertical-align: middle;
 }
@@ -16,7 +17,7 @@
     font-style: normal;
     color: #C30F23;
 }
-.errTip {
+.form-tips {
     color: #C30F23;
     margin-left: 10px;
     display: none;
@@ -35,7 +36,6 @@
     text-align: center;
     background-color: #C30F23;
     color: #fff;
-    margin-top: 35px;
     cursor: pointer;
 }
 
