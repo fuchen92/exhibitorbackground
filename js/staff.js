@@ -7,25 +7,22 @@ $(document).ready(function () {
         submitChangeAllot = $("#submitChangeAllot");
 
     var changeTR = null,
-        changeIndex = 0;            // 修改的是哪一个参会人信息的下标
+        changeIndex = 0;            // 修改的是哪一个工作人员信息的下标
 
     var changedInfo = [];           // 保存修改后的信息
 
-    var checkInBtn = $(".checkInBtn"),                    // 分配相关门票
+    var checkInBtn = $("#checkInBtn"),                      // 登记工作人员按钮
         allotDialog = $("#allotDialog"),                    // 分配浮窗对话框
         closeAllotDialog = $("#closeAllotDialog"),          // 关闭分配浮窗对话框
-        allotTitle = $("#allotTitle"),                      // 分配浮窗标题
-        saveAllot = $("#saveAllot"),                        // 保存分配的参会嘉宾
-        addAnother = $("#addAnother"),                      // 添加下一个参会嘉宾按钮
+        saveAllot = $("#saveAllot"),                        // 保存分配的工作人员按钮
+        addAnother = $("#addAnother"),                      // 添加下一个工作人员按钮
         btnGroup = $("#btnGroup"),
-        noAllotContainer = $("#noAllot"),
-        ticketType = 0,                                     // 分配门票的类型（VIP票，普通票，直通票，展览票）
-        ticketTypeText = "";
+        noAllotContainer = $("#noAllot");
         
     var canAddCount = 0,                                    // 能不能继续添加下一个的标识
-        noAllotCount = Number($(".checkIn-count").text());                                   // 还剩未分配的门票数量
+        noAllotCount = Number($(".checkIn-count").text());      // 还剩未分配的工作人员数量
         
-    var alreadyAllot = $("#alreadyAllot");
+    var alreadyCheck = $("#alreadyCheck");
 
     $("#changeForm, #allotDialog").on("click keyup",":input",function() {
         var _this = $(this);
@@ -235,7 +232,7 @@ $(document).ready(function () {
             addAnother.remove();
         }
     });
-    // 保存分配的门票参会人信息
+    // 保存登记的工作人员信息
     saveAllot.on("click", function () {
         var allotUsers = [],
             allotForms = noAllotContainer.children(".addallot-form"),
@@ -260,16 +257,12 @@ $(document).ready(function () {
             allotUsers.push({
                 NameCn: $.trim(inputs.eq(0).val()),
                 NameEn: $.trim(inputs.eq(1).val()),
-                CompanyCn: $.trim(inputs.eq(2).val()),
-                CompanyEn: $.trim(inputs.eq(3).val()),
-                JobTitleCn: $.trim(inputs.eq(4).val()),
-                JobTitleEn: $.trim(inputs.eq(5).val()),
-                Mobile: $.trim(inputs.eq(6).val()),
-                Tel: $.trim(inputs.eq(7).val()),
-                Mail: $.trim(inputs.eq(8).val()),
-                Industry: $.trim(inputs.eq(9).val()),
-                JobFunction: $.trim(inputs.eq(10).val()),
-                Sex: $.trim(inputs.eq(11).val()), 
+                JobTitleCn: $.trim(inputs.eq(2).val()),
+                JobTitleEn: $.trim(inputs.eq(3).val()),
+                Mobile: $.trim(inputs.eq(4).val()),
+                Mail: $.trim(inputs.eq(5).val()),
+                JobFunction: $.trim(inputs.eq(6).val()),
+                Sex: $.trim(inputs.eq(7).val()), 
             })
         });
         if (catchErr) {
@@ -294,23 +287,24 @@ $(document).ready(function () {
         }
 
         var order = {
-            TicketType: ticketType,
             UserList: allotUsers
         }
         generateAlloted(allotUsers);
-        alreadyAllot.attr("rowspan", parseInt(alreadyAllot.attr("rowspan")) + allotUsers.length);
+        alreadyCheck.attr("rowspan", parseInt(alreadyCheck.attr("rowspan")) + allotUsers.length);
         noAllotCount -= allotUsers.length;
         console.log(noAllotCount);
+        noAllotCount <= 0 && checkInBtn.remove();
+        $(".checkIn-count").text(noAllotCount);
         $(".allot-tips").children(".allottips-item").length == 0 && $(".allot-tips").remove();
         closeAllotDialog.trigger("click");
     });
 
-    // 生成已分配信息
+    // 生成已登记的工作人员信息
     function generateAlloted (objArr) {
         var str = "";
         for (var i = 0; i < objArr.length; i++) {
                 str += "<tr class='hasborder alloted' data-nameen='" + objArr[i].NameEn + "'data-joben='" + objArr[i].JobTitleEn + "'data-function='" + objArr[i].JobFunction + "'data-sex='" + objArr[i].Sex + "'>" + 
-                            "<td class='allotId'>" + (parseInt(alreadyAllot.attr("rowspan")) + i) + "</td>" + 
+                            "<td class='allotId'>" + (parseInt(alreadyCheck.attr("rowspan")) + i) + "</td>" + 
                             "<td class='nameCN'>" + objArr[i].NameCn + "</td>" +
                             "<td class='sex'>" + (objArr[i].Sex == 1 ? "男" : "女") + "</td>" + 
                             "<td class='jobCN'>" + objArr[i].JobTitleCn + "</td>" + 
