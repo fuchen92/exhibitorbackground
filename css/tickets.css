@@ -111,7 +111,11 @@ tr td.companyCN, tr td.mobile, tr td.email {
     font-size: 15px;
     border: none;
     background-color: #EEEEEE;
-    color: #333333;    
+    color: #333333;
+}
+.no-allot {
+    height: 120px;
+    color: #858585;
 }
 .changeBtn {
     width: 70px;

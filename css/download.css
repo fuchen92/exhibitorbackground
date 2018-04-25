@@ -1,4 +1,45 @@
+.wrapper > .container, .menu-title > .container {
+    overflow: visible;
+}
 /********** 帮助文件 **********/
+.guides-caret {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #D07B84;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    line-height: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.guides-desc {
+    position: absolute;
+    top: -35px;
+    left: -30px;
+    background-color: #D07B84;
+    color: #fff;
+    font-size: 14px;
+    white-space: nowrap;
+    line-height: 25px;
+    border-radius: 2px;
+    padding: 0 5px;
+    display: none;
+}
+.guides-desc::after{
+    position: absolute;
+    left: 33px;
+    display: block;
+    content: "";
+    border: 5px solid transparent;
+    border-top-color: #D07B84;
+    border-top-width: 6px;
+}
+.guides-caret:hover .guides-desc {
+    display: block;
+}
 .guides {
     overflow: hidden;
     margin: 20px;
@@ -9,7 +50,7 @@
     margin-bottom: 30px;
 }
 .guide-item:not(:last-child) {
-    margin-right: 86px;
+    margin-right: 82px;
 }
 .guide-img {
     width: 100%;
@@ -27,7 +68,7 @@
 
 @media screen and (max-width: 1400px) {
     .guide-item:not(:last-child) {
-        margin-right: 49px;
+        margin-right: 45px;
     }
     .guide-item:nth-last-child(2) {
         margin-right: 0px;
@@ -36,7 +77,7 @@
 
 @media screen and (max-width: 1366px) {
     .guide-item:not(:last-child) {
-        margin-right: 36px;
+        margin-right: 32px;
     }
     .guide-item:nth-last-child(2) {
         margin-right: 0px;

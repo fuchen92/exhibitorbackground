@@ -74,7 +74,7 @@ nav > .container {
 .logo-tdc, .logo-cdts {
     display: inline-block;
     width: auto;
-    height: 45px;
+    height: 42px;
 }
 .logo-tdc {
     margin-right: 15px;
@@ -82,12 +82,18 @@ nav > .container {
 .logo-divide {
     height: 25px;
     border-left: 1px solid #CDCDCD;
-    margin: 38px 15px 0 15px;
+    margin: 35px 15px 0 15px;
 }
 .logo-desc {
-    font-weight: normal;
+    /* font-weight: normal;
     font-size: 20px;
     line-height: 30px;
+    margin-top: 35px;
+    color: #fff; */
+
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
     margin-top: 35px;
     color: #fff;
 }
@@ -140,13 +146,14 @@ nav > .container {
 /********** 公共侧边栏菜单 **********/
 .menu {
     width: 150px;
+    padding-top: 10px;
 }
 .menu-list {
     margin-bottom: 60px;
 }
 .menu-category {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 35px;
     color: #333333;
     padding-left: 20px;
     background-position: left center;
@@ -167,7 +174,7 @@ nav > .container {
 .menu-item {
     display: block;
     font-size: 16px;
-    line-height: 25px;
+    line-height: 35px;
     color: #333333;
 }
 .menu-item.active {
@@ -188,11 +195,29 @@ nav > .container {
     background-color: #fff;
 }
 .menu-title > .container {
-    width: 98%;
+    width: 97%;
 }
 .menutitle-text {
     font-size: 16px;
+    line-height: 25px;    
+}
+.menutitle-desc {
+    font-size: 16px;
     line-height: 25px;
+    color: #C30F23;
+    cursor: pointer;    
+}
+.menutitle-caret {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #C30F23;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    line-height: 15px;
 }
 .main-content {
     margin-top: 15px;
@@ -200,7 +225,7 @@ nav > .container {
     background-color: #fff;
 }
 .main-content > .container {
-    width: 98%;
+    width: 97%;
 }
 .content-tab {
     height: 40px;
@@ -301,9 +326,6 @@ nav > .container {
 .serviceTime {
     background-image: url(img/time.png);
     background-size: 20px;
-}
-.contact-tel {
-    color: #C30F23;
 }
 .contact-desc {
     font-size: 12px;
