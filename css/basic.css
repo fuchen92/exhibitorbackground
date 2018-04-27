@@ -149,7 +149,7 @@ nav > .container {
     padding-top: 10px;
 }
 .menu-list {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 .menu-category {
     font-size: 16px;
@@ -158,6 +158,9 @@ nav > .container {
     padding-left: 20px;
     background-position: left center;
     background-repeat: no-repeat;
+}
+.icon-home {
+    background-image: url(img/menu-icon5.png);
 }
 .icon-exhibitor {
     background-image: url(img/menu-icon1.png);
