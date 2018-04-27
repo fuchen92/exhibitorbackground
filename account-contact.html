@@ -90,6 +90,45 @@
                                 <b class="tab-label">未填写</b>
                             </li>
                         </ul>
+                        <p class="contact-tip">请填写贵司跟进该项目的负责人联系信息，我们将通过该处电话和邮箱将相关通知传递给贵司。</p>
+                        <ul class="contact-form" id="contactForm">
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    联系人姓名：
+                                </span>
+                                <input type="text" class="form-input" data-role='[{ "name": "联系人姓名" }]'>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    职位：
+                                </span>
+                                <input type="text" class="form-input" data-role='[{ "name": "职位" }]'>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    联系手机：
+                                </span>
+                                <input type="text" class="form-input" data-role='[{ "name": "联系手机", "reg": "/(^(13[0-9]|15[012356789]|18[0-9]|14[57]|17[0-9])[0-9]{8}$)|(^09\d{8}$)|(^[569]\d{7}$)|(^(66|62)\d{6}$)/" }]'>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label">
+                                    <i class="require-mark">*</i>
+                                    联系邮箱：
+                                </span>
+                                <input type="text" class="form-input" data-role='[{ "name": "联系邮箱", "reg": "/^\\w+([-+.]\\w+)*[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$/" }]'>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label"></span>
+                                <span id="formTip" class="form-tips">请填写联系人姓名</span>
+                            </li>
+                            <li class="form-group">
+                                <span class="form-label"></span>
+                                <button id="submitContact" class="submitBtn">修改</button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -110,5 +149,104 @@
             </div>
         </div>
     </div>
+    <!-- 修改成功对话框 -->
+    <div id="successDialog" class="successDialog">
+        <div class="successDialog-bg"></div>
+        <div class="successDialog-wrapper">
+            <div id="closeSuccessDialog" class="successDialog-close">×</div>
+            <h3 class="successDialog-title">账户联系人登记</h3>
+            <p class="successDialog-desc">信息更新成功！</p>
+            <button id="cancelSuccessDialog" class="cancelSuccessDialog">确定</button>
+        </div>
+    </div>
+    
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script>
+        $(function() {
+            var contactForm = $("#contactForm"),
+                submitContact = $("#submitContact"),
+                contactInputs = contactForm.find("input"),
+                formTip = $("#formTip"),
+                successDialog = $("#successDialog");
+
+            var hasTip = false,
+                catchErr = false;
+
+            submitContact.on("click", function () {
+                
+                catchErr = false;
+
+                contactInputs.each(function () {
+                    var currInput = $(this);
+                    if (!validate(currInput)) {
+                        catchErr = true;
+                        currInput.focus();
+                        return false;
+                    }                    
+                });
+                if(catchErr)  return false;
+                var order = {
+                    Name: $.trim(contactInputs.eq(0).val()),
+                    JobTitle: $.trim(contactInputs.eq(1).val()),
+                    Mobile: $.trim(contactInputs.eq(2).val()),
+                    Mail: $.trim(contactInputs.eq(3).val())
+                }
+                // $.ajax({
+                //     url: "OrderCreate",
+                //     type: "POST",
+                //     dataType: "json",
+                //     contentType: "application/json; charset=utf-8",
+                //     data: JSON.stringify({ "order": order }),
+                //     cache: false,
+                //     success: function (js) {
+                //         if (js.Code == 0) {
+                //             alert("提交成功")
+                //         } else {
+                //             alert("提交失败，请稍后再试")
+                //         }
+                //     },
+                //     error: function (error) {
+                //         console.log(error)
+                //     }
+                // });      
+                submitContact.prop("disabled", true);
+                successDialog.css("display", "block");
+            });
+            contactForm.on("click keyup", "input", function () {
+                formTip.removeAttr("style");
+            });
+            successDialog.on("click", "#closeSuccessDialog, #cancelSuccessDialog", function () {
+                successDialog.removeAttr("style");
+                submitContact.prop("disabled", false);
+            });
+
+            // 验证函数
+            function validate (ele) {
+                hasTip = false;
+                var attr = ele.attr("data-role");
+                if (attr) {
+                    var role = eval(attr);
+                    var currVal = ele.val();
+                    if (role && role.length > 0) {
+                        if (!currVal || currVal.length == 0 || currVal == "0") {
+                            if (!hasTip) {
+                                formTip.html( (ele.is("select") ? "请选择" : "请输入") + role[0].name ).show();
+                                hasTip = true;
+                            }
+                            return false;
+                        }
+                        if (role[0].reg && !eval(role[0].reg).test(currVal)) {
+                            if (!hasTip) {
+                                formTip.html(role[0].name + "格式不正确，请检查").show();
+                                hasTip = true;
+                            }
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+        });
+    </script>
 </body>
 </html>

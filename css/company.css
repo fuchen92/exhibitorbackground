@@ -1,1 +1,155 @@
+.main-content > .container {
+    overflow: visible;
+}
+.main-content > .container::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+/********** 本页面的一些公共样式 **********/
+.form-group {
+    margin-bottom: 15px;
+    min-height: 20px;
+}
+.form-label {
+    display: block;
+    font-size: 15px;
+    color: #565656;
+    margin-bottom: 5px;
+}
+.input-group {
+    overflow: hidden;
+}
+.form-item {
+    height: 65px;
+}
+.middle-item {
+    width: 48%;
+}
+.require-mark {
+    font-style: normal;
+    color: #C30F23;
+}
+.form-tips {
+    color: #C30F23;
+    margin-left: 5px;
+    line-height: 25px;
+    display: none;
+}
+.form-input {
+    width: 265px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #EEEEEE;
+    background-color: #F8F8F8;
+}
+.middle-item > .form-input {
+    width: 100%;
+}
+.input-small {
+    width: 70px;
+    margin-right: 20px;
+}
+.submitBtn {
+    width: 165px;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #C30F23;
+    color: #fff;
+    cursor: pointer;
+}
+
 /********** 公司信息 **********/
+.main-infomation-form {
+    margin-bottom: 15px;
+}
+.main-infomation-form::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.main-infomation-left {
+    width: 65%;
+    margin-bottom: 15px;
+}
+.industry {
+    position: relative;
+    height: auto;
+    min-height: 40px;
+}
+.industry-show {
+    box-sizing: border-box;
+    border: 1px solid #EEEEEE;
+    height: auto;
+    overflow: hidden;
+    min-height: 40px;
+}
+.industry-show-box {
+    width: calc(100% - 30px);
+    width: -webkit-calc(100% - 30px);
+    width: -moz-calc(100% - 30px);
+    min-height: 40px;
+}
+.dropdown-caret {
+    display: block;
+    border: 5px solid transparent;
+    border-top-color: black;
+    border-top-width: 10px;
+    margin: 15px 10px 0 0;
+}
+.show-tag {
+    box-sizing: border-box;
+    height: 30px;
+    line-height: 30px;
+    background-color: #F8F8F8;
+    margin: 5px;
+    padding: 0 5px;
+}
+.tag-delete {
+    display: inline-block;
+    vertical-align: top;
+    width: 15px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.industry-tip {
+    position: absolute;
+    top: 100%;
+}
+.industry-category {
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+    display: none;
+}
+.industry-group {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.industry-category-title {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+.industry-tag {
+    height: 30;
+    line-height: 30px;
+    padding: 5px;
+    margin-right: 5px;
+}
+.large-item {
+    height: 175px;
+    margin-bottom: 15px;
+}
+.form-textarea {
+    width: 100%;
+    height: 155px;
+    padding: 10px;
+    resize: none;
+}

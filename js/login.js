@@ -36,6 +36,6 @@ $(document).ready(function () {
         //     }
         // });
         console.log("恭喜你登录成功");
-        window.location.href = "http://192.168.1.48:88/product.html";
+        window.location.href = "http://192.168.1.22:88/";
     })
 });
