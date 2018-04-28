@@ -101,11 +101,11 @@
                                         </span>
                                         <div class="input-group">
                                             <div class="form-item middle-item lt">
-                                                <input type="text" class="form-input" placeholder="中文">
+                                                <input type="text" class="form-input" placeholder="中文" data-role='[{ "name": "中文简称" }]'>
                                                 <p class="form-tips">请输入中文简称</p>
                                             </div>
                                             <div class="form-item middle-item rt">
-                                                <input type="text" class="form-input rt" placeholder="英文">
+                                                <input type="text" class="form-input rt" placeholder="英文" data-role='[{ "name": "英文简称" }]'>
                                                 <p class="form-tips">请输入英文简称</p>
                                             </div>
                                         </div>
@@ -118,7 +118,7 @@
                                         <div class="input-group">                                            
                                             <input type="text" class="form-input input-small lt" placeholder="区号">
                                             <div class="form-item lt">
-                                                <input type="text" class="form-input lt" placeholder="固话号码">
+                                                <input type="text" class="form-input lt" placeholder="固话号码" data-role='[{ "name": "固话号码" }]'>
                                                 <p class="form-tips">请输入固话号码</p>
                                             </div>
                                         </div>
@@ -128,58 +128,61 @@
                                             <i class="require-mark">*</i>
                                             公司所属行业（最多可选5个）
                                         </span>
-                                        <div class="industry">
-                                            <div class="industry-show">
-                                                <div class="industry-show-box lt">
-                                                    <span class="show-tag lt">B2b 分销<b class="tag-delete">×</b></span>
-                                                    <span class="show-tag lt">B2b 分销<b class="tag-delete">×</b></span>
-                                                    <span class="show-tag lt">B2b 分销<b class="tag-delete">×</b></span>
-                                                    <span class="show-tag lt">B2b 分销<b class="tag-delete">×</b></span>
-                                                    <span class="show-tag lt">B2b 分销<b class="tag-delete">×</b></span>
+                                        <div id="industry" class="industry">
+                                            <div id="industrySelect" class="industry-select form-input" data-role='[{ "name": "所属行业" }]'>
+                                                <div id="industryShow" class="industry-show lt">
+                                                    <!-- <span class="show-tag lt">B2b 分销<b class="tag-delete">×</b></span> -->
                                                 </div>
                                                 <b class="dropdown-caret rt"></b>
                                             </div>
                                             <p class="form-tips industry-tip">请选择所属行业</p>
-                                            <div class="industry-category">
+                                            <div id="industryCategory" class="industry-category">
                                                 <div class="industry-group">
                                                     <h3 class="industry-category-title">旅游科技</h3>
-                                                    <span class="industry-tag lt">B2B 分销</span>
-                                                    <span class="industry-tag lt">PMS/CRS</span>
-                                                    <span class="industry-tag lt">智能设备</span>
-                                                    <span class="industry-tag lt">人工智能</span>
-                                                    <span class="industry-tag lt">云和大数据</span>
-                                                    <span class="industry-tag lt">移动解决方案</span>
-                                                    <span class="industry-tag lt">VR/AR应用</span>
-                                                    <span class="industry-tag lt">区块链</span>
-                                                    <span class="industry-tag lt">聊天机器人</span>
-                                                    <span class="industry-tag lt">语音/图片/生物识别</span>
-                                                    <span class="industry-tag lt">服务机器人</span>
-                                                    <span class="industry-tag lt">价格预测</span>
+                                                    <span class="industry-tag lt" data-industry="1">B2B 分销</span>
+                                                    <span class="industry-tag lt" data-industry="2">PMS/CRS</span>
+                                                    <span class="industry-tag lt" data-industry="3">智能设备</span>
+                                                    <span class="industry-tag lt" data-industry="4">人工智能</span>
+                                                    <span class="industry-tag lt" data-industry="5">云和大数据</span>
+                                                    <span class="industry-tag lt" data-industry="6">移动解决方案</span>
+                                                    <span class="industry-tag lt" data-industry="7">VR/AR应用</span>
+                                                    <span class="industry-tag lt" data-industry="8">区块链</span>
+                                                    <span class="industry-tag lt" data-industry="9">聊天机器人</span>
+                                                    <span class="industry-tag lt" data-industry="10">语音/图片/生物识别</span>
+                                                    <span class="industry-tag lt" data-industry="11">服务机器人</span>
+                                                    <span class="industry-tag lt" data-industry="12">价格预测</span>
                                                 </div>
                                                 <div class="industry-group">
                                                     <h3 class="industry-category-title">数字营销</h3>
-                                                    <span class="industry-tag lt">广告营销</span>
-                                                    <span class="industry-tag lt">大数据/数据分析</span>
-                                                    <span class="industry-tag lt">舆情/流量检测及分析</span>
-                                                    <span class="industry-tag lt">内容营销/内容管理</span>
-                                                    <span class="industry-tag lt">会员营销/忠诚度计划</span>
+                                                    <span class="industry-tag lt" data-industry="13">广告营销</span>
+                                                    <span class="industry-tag lt" data-industry="14">大数据/数据分析</span>
+                                                    <span class="industry-tag lt" data-industry="15">舆情/流量检测及分析</span>
+                                                    <span class="industry-tag lt" data-industry="16">内容营销/内容管理</span>
+                                                    <span class="industry-tag lt" data-industry="17">会员营销/忠诚度计划</span>
                                                 </div>
                                                 <div class="industry-group">
                                                     <h3 class="industry-category-title">旅游企业</h3>
-                                                    <span class="industry-tag lt">在线旅游</span>
-                                                    <span class="industry-tag lt">航空公司</span>
-                                                    <span class="industry-tag lt">酒店</span>
-                                                    <span class="industry-tag lt">景区及旅游局</span>
-                                                    <span class="industry-tag lt">交通出行</span>
-                                                    <span class="industry-tag lt">旅行社</span>
-                                                    <span class="industry-tag lt">B2B 分销批发商</span>
+                                                    <span class="industry-tag lt" data-industry="18">在线旅游</span>
+                                                    <span class="industry-tag lt" data-industry="19">航空公司</span>
+                                                    <span class="industry-tag lt" data-industry="20">酒店</span>
+                                                    <span class="industry-tag lt" data-industry="21">景区及旅游局</span>
+                                                    <span class="industry-tag lt" data-industry="22">交通出行</span>
+                                                    <span class="industry-tag lt" data-industry="23">旅行社</span>
+                                                    <span class="industry-tag lt" data-industry="24">B2B 分销批发商</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>                                    
                                 </div>
                                 <div class="main-infomation-right rt">
-
+                                    <div id="logoArea" class="logo-area">
+                                        <img id="logoImg" class="logo-img" src="">
+                                        <div id="logoTip" class="logo-tip">
+                                            请上传公司logo &gt;&gt;
+                                            <br>
+                                            220*180
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- 次要信息表单 -->
@@ -190,14 +193,17 @@
                                         公司介绍（240字以内）
                                     </span>
                                     <div class="form-item large-item">
-                                        <textarea class="form-input form-textarea" placeholder="中文介绍：介绍公司的主要业务范围、覆盖区域、能力特色；向观众展示贵公司的业务实力"></textarea>
+                                        <textarea class="form-input form-textarea" placeholder="中文介绍：介绍公司的主要业务范围、覆盖区域、能力特色；向观众展示贵公司的业务实力" data-role='[{ "name": "中文公司介绍" }]'></textarea>
                                         <p class="form-tips">请输入中文公司介绍</p>
                                     </div>
                                     <div class="form-item large-item">
-                                        <textarea class="form-input form-textarea" placeholder="英文介绍： 介绍公司的主要业务范围、覆盖区域、能力特色；向观众展示贵公司的业务实力。"></textarea>
+                                        <textarea class="form-input form-textarea" placeholder="英文介绍： 介绍公司的主要业务范围、覆盖区域、能力特色；向观众展示贵公司的业务实力。" data-role='[{ "name": "英文公司介绍" }]'></textarea>
                                         <p class="form-tips">请输入英文公司介绍</p>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <button id="submitCompany" class="submitBtn">提交</button>
                             </div>
                         </div>
                     </div>
@@ -205,5 +211,54 @@
             </div>
         </div>
     </div>
+    <!-- 固定右侧联系信息 -->
+    <div class="fixedcontact">
+        <img class="contact-icon" src="css/img/contact.png">
+        <p class="contact-tips">有问题？<br>联系我们</p>
+        <div class="contact-box">
+            <div class="contact-item">
+                <p class="contact-label serviceTel">联系电话</p>
+                <p class="contact-desc contact-tel">020-28829750</p>
+            </div>
+            <div class="contact-item">
+                <p class="contact-label serviceTime">服务时间</p>
+                <p class="contact-desc">工作日 9：30-18：00</p>
+            </div>
+        </div>
+    </div>
+    <!-- 修改成功对话框 -->
+    <div id="successDialog" class="successDialog">
+        <div class="successDialog-bg"></div>
+        <div class="successDialog-wrapper">
+            <div id="closeSuccessDialog" class="successDialog-close">×</div>
+            <h3 class="successDialog-title">公司信息</h3>
+            <p class="successDialog-desc">信息更新成功！</p>
+            <button id="cancelSuccessDialog" class="cancelSuccessDialog">确定</button>
+        </div>
+    </div>
+    <!-- 上传logo对话框 -->
+    <div class="upload">
+        <div class="upload-bg"></div>
+        <div class="upload-wrapper">
+            <div id="closeUpload" class="upload-close">×</div>
+            <h3 class="upload-title">上传logo（仅支持JPG，GIF，PNG格式，文件小于4M）</h3>
+            <div class="upload-content">
+                <div id="logoLarge" class="logo-large"></div>
+                <label class="upload-label">
+                    选择图片
+                    <input id="uploadInput" class="uploadInput" type="file" accept="image/gif, image/jpg, image/jpeg, image/png">
+                </label>
+            </div>
+            <div id="preview" class="preview"></div>
+            <div class="uploadbtns-group">
+                <button class="upload-confirm">确认</button>
+                <button class="upload-cancel">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/cropper.min.js"></script>
+    <script src="js/company.js"></script>
 </body>
 </html>
