@@ -9,42 +9,6 @@ $(function() {
         submitCompany = $("#submitCompany"),
         successDialog = $("#successDialog");
 
-    var uploadLabel = $("#uploadLabel"),
-        uploadInput = $("#uploadInput"),                    // 图片上传隐藏表单
-        imgPreview = $("#imgPreview");
-
-    uploadInput.on("change", function() {
-        uploadImg($(this)[0]);
-        console.log($(this)[0].files)
-    });
-    function uploadImg(fileDom) {
-        //判断是否支持FileReader
-        if(window.FileReader) {
-            var reader = new FileReader();
-        } else {
-            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
-        }
-        //获取文件
-        var file = fileDom.files[0];
-        var imageType = /^image\//;
-        //是否是图片
-        if(!imageType.test(file.type)) {
-            alert("请选择图片！");
-            return;
-        }
-        reader.readAsDataURL(file);
-        //读取完成
-        reader.onload = function(e) {
-            //获取图片dom
-            // var img = document.getElementById("preview");
-            //图片路径设置为读取的图片
-            imgPreview[0].src = e.target.result;
-            // imgPreview[0].src = window.URL.createObjectURL(fileDom.files.item(0));
-            imgPreview.show();
-        };
-        uploadLabel.hide();
-    }
-
     var maxTag = 5,
         tagArr = [];
 
@@ -156,4 +120,119 @@ $(function() {
         }
         return true;
     }
+
+    var logoArea = $("#logoArea"),                          // logo展示区域
+        logoImg = $("#logoImg"),                            // 展示logo标签
+        logoTip = $("#logoTip"),                            // logo说明（220*180）
+        upload = $("#upload"),                              // logo上传对话框
+
+        logoLarge = $("#logoLarge"),
+        uploadLabel = $("#uploadLabel"),
+        uploadInput = $("#uploadInput"),                    // 图片上传隐藏表单
+        preview = $("#preview"),
+        uploadConfirm = $("#uploadConfirm");                // 确认按钮
+
+    var isUpload = false;
+
+    logoArea.hover(function() {
+        logoTip.removeAttr("style");
+    }, function() {
+        isUpload = (logoImg.attr("src") == "" ? false : true);
+        if(isUpload) {
+            logoTip.hide();
+        }
+    });
+
+    logoTip.on("click", function() {
+        logoLarge.empty();
+        preview.empty();
+        uploadInput.val("");
+        upload.css("display", "block");
+    });
+
+    uploadInput.on("change", function() {
+        uploadImg(this);
+        console.log($(this)[0].files)
+    });
+ 
+    function uploadImg(fileDom) {
+        //判断是否支持FileReader
+        if(window.FileReader) {
+            var reader = new FileReader();
+        } else {
+            alert("您的设备不支持图片预览功能，如需该功能请升级您的设备！");
+        }
+        //获取文件
+        var file = fileDom.files[0];
+        var imageType = /^image\//;
+        //是否是图片
+        if(!imageType.test(file.type)) {
+            alert("请选择图片！");
+            return;
+        }
+        reader.readAsDataURL(file);
+        //读取完成
+        reader.onload = function(e) {
+            //获取图片dom
+            // var img = document.getElementById("preview");
+            logoLarge.html('<img id="largeLogo" src="' + e.target.result + '">');
+            var largeLogo = $("#largeLogo");
+            console.log(largeLogo[0])
+            largeLogo.cropper({
+                aspectRatio: 22/18,
+                dragmode: 'move',//移动画布
+                minCropBoxWidth: 100,//裁剪框的最小宽度
+                crop: function(e) {
+                    preview.html(largeLogo.cropper("getCroppedCanvas", {
+                        width: 220,
+                        height: 180
+                    }))
+                }
+            })
+        };
+    }
+
+    uploadConfirm.on("click", function() {
+        var ctx = preview.children()[0];
+        var dataUrl = ctx.toDataURL("image/jpg");
+        logoImg[0].src = dataUrl;
+        logoImg.show();
+        logoTip.hide();
+        // var Pic = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+        // $.ajax({
+        //     url: "http://img.traveldaily.cn/Uploader/UserPhotoBase64",
+        //     type: "POST",
+        //     dataType: "json",
+        //     data: { "userid": @(Session["UserId"]), "timestamp": '@(ViewData["timestamp"])', "checksum": '@(ViewData["checksum"])', "imagedata": Pic },
+        //     success: function (js) {
+        //         if (js.Code == 0) {
+        //             $(".profile-photo-img").attr("src", dataURL);
+        //             $.ajax({
+        //                 url: "/Api/PhotoSession",
+        //                 type: "POST",
+        //                 dataType: "json",
+        //                 data: { "photo": js.Message },
+        //                 success: function (js) {
+        //                 }
+        //             });
+        //         } else {
+        //             layer.alert("上传失败：" +
+        //                 js.Message);
+        //         }
+        //     }
+        // });
+        upload.removeAttr("style");
+    });
+
+    //dee-关闭上传
+    $("#closeUpload, .upload-cancel").click(function(){
+        logoLarge.empty();
+        preview.empty();
+        uploadInput.val("");
+        $(".upload").removeAttr("style");
+        isUpload = (logoImg.attr("src") == "" ? false : true);
+        if(!isUpload) {
+            logoTip.hide();
+        }
+    });
 });
