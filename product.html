@@ -8,6 +8,7 @@
     <meta name="renderer" content="webkit">
     <title>展商--产品信息页</title>
     <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/cropper.min.css">
     <link rel="stylesheet" href="css/product.css">
 </head>
 <body>
@@ -94,7 +95,7 @@
                                 <b class="tab-label">未填写</b>
                             </li>
                         </ul>
-                        <div class="product-list">
+                        <div id="productList" class="product-list">
                             <div class="product-row bgrow">
                                 <div class="product-column column-1 product-thead lt">
                                     序号
@@ -117,12 +118,13 @@
                                 </div>
                             </div>
                             <!-- 已填写情况 -->                            
-                            <div class="product-row">
+                            <div class="product-row" data-producten="" data-productintroen="">
                                 <div class="product-column column-1 lt">
                                     <span class="productId">1</span>
                                 </div>
                                 <div class="product-column column-2 lt">
-                                    <span class="product-logo"></span>
+                                    <!-- <span class="product-logo"></span> -->
+                                    <img class="product-logo" src="css/img/amc-logo.png">
                                 </div>
                                 <div class="product-column column-3 lt">
                                     <span class="productName">微信广告</span>
@@ -139,12 +141,13 @@
                                     <span class="movedown"></span>
                                 </div>
                             </div>
-                            <div class="product-row">
+                            <div class="product-row" data-producten="" data-productintroen="">
                                 <div class="product-column column-1 lt">
                                     <span class="productId">2</span>
                                 </div>
                                 <div class="product-column column-2 lt">
-                                    <span class="product-logo"></span>
+                                    <!-- <span class="product-logo"></span> -->
+                                    <img class="product-logo" src="">
                                 </div>
                                 <div class="product-column column-3 lt">
                                     <span class="productName">微信广告</span>
@@ -161,7 +164,7 @@
                                     <span class="movedown"></span>
                                 </div>
                             </div>
-                            <div class="product-row">
+                            <!-- <div class="product-row">
                                 <div class="product-column column-1 lt">
                                     <span class="productId">3</span>
                                 </div>
@@ -182,39 +185,17 @@
                                     <span class="moveup"></span>
                                     <span class="movedown"></span>
                                 </div>
-                            </div>
-                            <div class="product-row">
-                                <div class="product-column column-1 lt">
-                                    <span class="productId">4</span>
-                                </div>
-                                <div class="product-column column-2 lt">
-                                    <span class="product-logo"></span>
-                                </div>
-                                <div class="product-column column-3 lt">
-                                    <span class="productName">微信广告</span>
-                                </div>
-                                <div class="product-column column-4 lt">
-                                    <p class="product-desc">
-                                        每天有超过8亿用户使用微信、QQ、QQ空间等众多腾讯产品及第三方应用，他们分享自己感兴趣的内容，浏览商业信息。我们帮助您与这些受众建立联系，将优质商业信息推送给真正需要的人。
-                                    </p>
-                                </div>
-                                <div class="product-column column-5 lt">
-                                    <span class="edit">编辑</span>
-                                    <span class="del">删除</span>
-                                    <span class="moveup"></span>
-                                    <span class="movedown"></span>
-                                </div>
-                            </div>
+                            </div> -->
                             <!-- 未填写情况 -->    
-                            <div class="product-row">
+                            <!-- <div class="product-row">
                                 <div class="product-column column-large lt">
                                     <p class="empty-text">
                                         您还没有添加产品/服务信息，请 <a class="addProduct" href="javascript:void(0);">点击添加</a>
                                     </p>
                                 </div>
-                            </div>                        
+                            </div> -->
                         </div>
-                        <div class="attention">
+                        <div id="attention" class="attention">
                             <p class="attention-text lt">注:最多可添加4条产品/服务信息。</p>
                             <button class="addProductBtn rt">添加新产品/服务</button>
                         </div>
@@ -239,12 +220,12 @@
         </div>
     </div>
     <!-- 添加产品服务信息对话框 -->
-    <div class="product-dialog">
+    <div id="productDialog" class="product-dialog">
         <div class="product-bg"></div>
         <div class="product-wrapper">
             <div id="closeProduct" class="product-close">×</div>
             <h3 class="product-title">添加产品/服务信息</h3>
-            <div class="product-form">
+            <div id="productForm" class="product-form">
                 <div class="main-product-form">
                     <div class="main-product-left lt">
                         <div class="form-group">
@@ -269,7 +250,7 @@
                         </div>
                     </div>
                     <div class="main-product-right rt">
-                        <div class="logo-area">
+                        <div id="logoArea" class="logo-area">
                             <img id="logoImg" class="logo-img" src="">
                             <div id="logoTip" class="logo-tip">
                                 请上传产品/服务logo
@@ -285,7 +266,7 @@
                             产品介绍
                         </span>
                         <div class="form-item large-item">
-                            <textarea id="" class="form-input form-textarea" placeholder="中文介绍" data-role='[{ "name": "中文介绍" }]'></textarea>
+                            <textarea class="form-input form-textarea" placeholder="中文介绍" data-role='[{ "name": "中文介绍" }]'></textarea>
                             <p class="form-tips">请输入中文介绍</p>
                         </div>
                     </div>
@@ -295,7 +276,7 @@
                             英文介绍
                         </span>
                         <div class="form-item large-item">
-                            <textarea id="" class="form-input form-textarea" placeholder="英文介绍" data-role='[{ "name": "英文介绍" }]'></textarea>
+                            <textarea class="form-input form-textarea" placeholder="英文介绍" data-role='[{ "name": "英文介绍" }]'></textarea>
                             <p class="form-tips">请输入英文介绍</p>
                         </div>
                     </div>
@@ -326,5 +307,9 @@
             </div>
         </div>
     </div>
+
+    <script src="http://img.traveldaily.cn/script/jquery.js"></script>
+    <script src="js/cropper.min123.js"></script>
+    <script src="js/product.js"></script>
 </body>
 </html>

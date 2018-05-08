@@ -352,12 +352,15 @@
     font-weight: normal;
 }
 .upload-content {
-    width: 400px;
+    /* width: 400px; */
+    width: 300px;
     margin: 0 auto;
 }
 .logo-large {
-    width: 400px;
-    height: 250px;
+    /* width: 400px; */
+    /* height: 250px; */
+    width: 300px;
+    height: 150px;
     background-color: aliceblue;
 }
 .logo-large > img {
@@ -380,8 +383,8 @@
     display: none;
 }
 .preview {
-    width: 220px !important;
-    height: 180px !important;
+    width: 145px !important;
+    height: 80px !important;
     margin: 15px auto 0;
     background-color: aliceblue;
     overflow: hidden;

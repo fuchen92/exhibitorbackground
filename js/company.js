@@ -152,7 +152,6 @@ $(function() {
 
     uploadInput.on("change", function() {
         uploadImg(this);
-        console.log($(this)[0].files)
     });
  
     function uploadImg(fileDom) {
@@ -177,7 +176,6 @@ $(function() {
             // var img = document.getElementById("preview");
             logoLarge.html('<img id="largeLogo" src="' + e.target.result + '">');
             var largeLogo = $("#largeLogo");
-            console.log(largeLogo[0])
             largeLogo.cropper({
                 aspectRatio: 22/18,
                 dragmode: 'move',//移动画布
