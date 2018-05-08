@@ -238,5 +238,93 @@
             </div>
         </div>
     </div>
+    <!-- 添加产品服务信息对话框 -->
+    <div class="product-dialog">
+        <div class="product-bg"></div>
+        <div class="product-wrapper">
+            <div id="closeProduct" class="product-close">×</div>
+            <h3 class="product-title">添加产品/服务信息</h3>
+            <div class="product-form">
+                <div class="main-product-form">
+                    <div class="main-product-left lt">
+                        <div class="form-group">
+                            <span class="form-label small-label lt">
+                                <i class="require-mark">*</i>
+                                产品中文简称
+                            </span>
+                            <div class="form-item small-item lt">
+                                <input type="text" class="form-input" data-role='[{ "name": "产品中文简称" }]'>
+                                <p class="form-tips">请输入产品中文简称</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span class="form-label small-label lt">
+                                <i class="require-mark">*</i>
+                                产品英文简称
+                            </span>
+                            <div class="form-item small-item lt">
+                                <input type="text" class="form-input" data-role='[{ "name": "产品英文简称" }]'>
+                                <p class="form-tips">请输入产品英文简称</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-product-right rt">
+                        <div class="logo-area">
+                            <img id="logoImg" class="logo-img" src="">
+                            <div id="logoTip" class="logo-tip">
+                                请上传产品/服务logo
+                            </div>
+                        </div>
+                        <p class="upload-desc">仅支持JPG、PNG...格式，文件小于4M</p>
+                    </div>
+                </div>
+                <div class="minor-product-form">
+                    <div class="form-group">
+                        <span class="form-label">
+                            <i class="require-mark">*</i>
+                            产品介绍
+                        </span>
+                        <div class="form-item large-item">
+                            <textarea id="" class="form-input form-textarea" placeholder="中文介绍" data-role='[{ "name": "中文介绍" }]'></textarea>
+                            <p class="form-tips">请输入中文介绍</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">
+                            <i class="require-mark">*</i>
+                            英文介绍
+                        </span>
+                        <div class="form-item large-item">
+                            <textarea id="" class="form-input form-textarea" placeholder="英文介绍" data-role='[{ "name": "英文介绍" }]'></textarea>
+                            <p class="form-tips">请输入英文介绍</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="submitProduct" class="submitBtn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 上传logo对话框 -->
+    <div id="upload" class="upload">
+        <div class="upload-bg"></div>
+        <div class="upload-wrapper">
+            <div id="closeUpload" class="upload-close">×</div>
+            <h3 class="upload-title">上传logo（仅支持JPG，GIF，PNG格式，文件小于4M）</h3>
+            <div class="upload-content">
+                <div id="logoLarge" class="logo-large"></div>
+                <label id="uploadLabel" class="upload-label">
+                    选择图片
+                    <input id="uploadInput" class="uploadInput" type="file" accept="image/gif, image/jpg, image/jpeg, image/png">
+                </label>
+            </div>
+            <div id="preview" class="preview"></div>
+            <div class="uploadbtns-group">
+                <button id="uploadConfirm" class="upload-confirm">确认</button>
+                <button class="upload-cancel">取消</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

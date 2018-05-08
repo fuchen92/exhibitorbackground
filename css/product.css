@@ -1,3 +1,65 @@
+/********** 本页面的一些公共样式 **********/
+.form-group {
+    margin-bottom: 11px;
+    min-height: 20px;
+    overflow: hidden;
+}
+.form-label {
+    display: block;
+    font-size: 15px;
+    color: #565656;
+    margin-bottom: 5px;
+}
+.small-label {
+    width: 105px;
+    margin: 10px 0 0;
+}
+.form-item {
+    height: 65px;
+}
+.small-item {
+    width: -wekit-calc(100% - 115px);
+    width: calc(100% - 115px);
+    width: -moz-calc(100% - 115px);
+    margin-left: 5px;
+}
+.large-item {
+    height: 110px;
+}
+.require-mark {
+    font-style: normal;
+    color: #C30F23;
+}
+.form-tips {
+    color: #C30F23;
+    margin-left: 5px;
+    line-height: 25px;
+    display: none;
+}
+.form-input {
+    /* width: 265px; */
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #EEEEEE;
+    background-color: #F8F8F8;
+}
+.form-textarea {
+    height: 80px;
+    padding: 10px;
+    resize: none;
+}
+.submitBtn {
+    display: block;
+    width: 165px;
+    height: 40px;
+    font-size: 15px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #C30F23;
+    color: #fff;
+    cursor: pointer;
+}
 /********** 产品信息 **********/
 .product-list {
     text-align: center;
@@ -146,4 +208,214 @@
     border: 1px solid #C30F23;
     background-color: #fff;
     cursor: pointer;
+}
+
+/********** 添加产品服务信息对话框 **********/
+.product-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    /* display: none; */
+}
+.product-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.product-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+}
+.product-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.product-title {
+    box-sizing: border-box;
+    height: 45px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 44px;
+    font-weight: normal;
+}
+.product-form {
+    padding: 20px;
+    overflow: hidden;
+}
+.main-product-form {
+    overflow: hidden;
+}
+.main-product-left {
+    width: 65%;
+}
+.main-product-right {
+    width: 35%;
+}
+.logo-area {
+    position: relative;
+    display: block;
+    width: 145px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #F8F8F8;
+}
+.logo-img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    display: none;
+}
+.logo-tip {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #C30F23;
+    z-index: 10;
+    cursor: pointer;
+}
+.upload-desc {
+    font-size: 12px;
+    color: #747474;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/********** 上传logo对话框 **********/
+.upload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    display: none;
+}
+.upload-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.upload-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    background-color: #fff;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+}
+.upload-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+.upload-title {
+    box-sizing: border-box;
+    height: 45px;
+    background-color: #F8F8F8;
+    border-bottom: 1px solid #eeeeee;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #333333;
+    line-height: 44px;
+    font-weight: normal;
+}
+.upload-content {
+    width: 400px;
+    margin: 0 auto;
+}
+.logo-large {
+    width: 400px;
+    height: 250px;
+    background-color: aliceblue;
+}
+.logo-large > img {
+    max-width: 100%;
+}
+.upload-label {
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin: 15px auto 0;
+    text-align: center;
+    color: #fff;
+    background-color: #C30F23;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.uploadInput {
+    display: none;
+}
+.preview {
+    width: 220px !important;
+    height: 180px !important;
+    margin: 15px auto 0;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+.preview canvas {
+    /* max-width: 100%;
+    max-height: 100%; */
+    width: 100%;
+    height: 100%;
+}
+.uploadbtns-group {
+    box-sizing: border-box;
+    height: 65px;
+    padding-top: 20px;
+    text-align: center;
+}
+.upload-confirm, .upload-cancel {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    height: 30px;
+    padding: 0;
+    border-radius: 2px;
+    line-height: 30px;
+    cursor: pointer;    
+}
+.upload-confirm {
+    margin-right: 20px;
+    background-color: #C30F23;
+    color: #fff;
+    border-radius: 2px;
+}
+.upload-cancel {
+    border: 1px solid #C30F23;
+    color: #C30F23;
+    background-color: transparent;
 }
