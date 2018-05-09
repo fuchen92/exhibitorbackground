@@ -47,7 +47,7 @@ $(function() {
         editIndex = 0;              // 修改的是哪个产品的下标
 
     submitProduct.on("click", function() {
-        if(isEdit) {    // 如果是在编辑状态
+        if(isEdit) {    // 编辑状态
             catchErr = false;
             formInputs.each(function() {
                 var currInput = $(this);
@@ -63,7 +63,7 @@ $(function() {
             currProduct.find(".product-logo")[0].src = logoImg[0].src;
             currProduct.attr("data-producten", $.trim(formInputs.eq(1).val()));
             currProduct.attr("data-productintroen", $.trim(formInputs.eq(3).val()));            
-        } else {        // 否则就是添加状态
+        } else {        // 添加状态
             catchErr = false;
             formInputs.each(function() {
                 var currInput = $(this);
@@ -89,7 +89,7 @@ $(function() {
             generateProduct($(".productId").length);
             currProductNum++;
             if(currProductNum >= maxProduct) {
-                attention.remove();
+                attention.hide();
             }
         }
         productDialog.removeAttr("style");
@@ -258,31 +258,79 @@ $(function() {
     productList.on("click", ".column-5 span", function() {
         currBtn = $(this);
         currProduct = currBtn.closest(".product-row");
-        editIndex = currProduct.index(".product-row:gt(0)");
-
+        editIndex = currProduct.index(".product-row");
+        console.log(editIndex);
         operation(currBtn, editIndex, currProduct);
     });
     function operation(currBtn, editIndex, currProduct) {
         var currClass = currBtn.attr("class");
         switch(currClass) {
             case "edit":
-                isEdit = true;
-                $(".product-title").text("编辑产品信息");
-                formInputs.eq(0).val($.trim(currProduct.find(".productName").text()));
-                formInputs.eq(1).val($.trim(currProduct.attr("data-producten")));
-                formInputs.eq(2).val($.trim(currProduct.find(".product-desc").text()));
-                formInputs.eq(3).val($.trim(currProduct.attr("data-productintroen")));
-                logoImg[0].src = currProduct.find(".product-logo")[0].src;
-                logoImg.show();
-                logoTip.hide();
-                productDialog.show();
+                editRow();
                 break;
             case "del":
+                delRow();
                 break;
             case "moveup":
+                moveupRow();
                 break;
             case "movedown":
+                movedownRow();
                 break;
+        }
+    }
+    function editRow() {    // 编辑产品
+        isEdit = true;
+        $(".product-title").text("编辑产品信息");
+        formInputs.eq(0).val($.trim(currProduct.find(".productName").text()));
+        formInputs.eq(1).val($.trim(currProduct.attr("data-producten")));
+        formInputs.eq(2).val($.trim(currProduct.find(".product-desc").text()));
+        formInputs.eq(3).val($.trim(currProduct.attr("data-productintroen")));
+        logoImg[0].src = currProduct.find(".product-logo")[0].src;
+        logoImg.show();
+        logoTip.hide();
+        productDialog.show();
+    }
+    function delRow() {     // 删除行
+        var prev = $(".product-row:lt(" + editIndex + ")"),
+            next = $(".product-row:gt(" + editIndex + ")");
+        currProduct.remove();
+        next.each(function() {
+            var productId = $(this).find(".productId");
+            productId.text(productId.text() - 1);
+        });
+        currProductNum =  $(".productId").length;   // 重新获取当前有多少个产品
+        if(currProductNum >= maxProduct) {
+            attention.hide();
+        } else {
+            attention.removeAttr("style");
+        }
+    }
+    function moveupRow() {
+        var prev = currProduct.prev(".product-row");
+        if(prev.length != 0) {
+            var prevId = prev.find(".productId"),
+                currId = currProduct.find(".productId"),
+                tem = prevId.text(),
+                b = currId.text();
+
+            prevId.text(b);
+            currId.text(tem);
+            prev.before(currProduct);
+        }
+        
+    }
+    function movedownRow() {
+        var next = currProduct.next(".product-row");
+        if(next.length != 0) {
+            var nextId = next.find(".productId"),
+                currId = currProduct.find(".productId"),
+                tem = nextId.text(),
+                b = currId.text();
+            
+            nextId.text(b);
+            currId.text(tem);
+            next.after(currProduct);
         }
     }
 });
