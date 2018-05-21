@@ -45,6 +45,11 @@ select {
     background-position: right 10px center;
     color: #181818;
 }
+/*input:-webkit-autofill {
+	background-color: #fff !important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	background: url(img/account3.png) transparent left 10px center no-repeat !important;
+}*/
 /* input:focus, select:focus {
     border: 1px solid #565656;
 } */
@@ -74,7 +79,8 @@ select {
 }
 .logo {
     text-align: center;
-    margin: 80px 0;
+    /*margin: 80px 0;*/
+   	margin: 50px 0;
 }
 .tdc-logo, .cdts-logo, .divide, .logo-title {
     display: inline-block;
@@ -208,4 +214,50 @@ select {
 }
 .cantlogin:hover .contact {
     display: block;
+}
+
+.activity {
+	box-sizing: border-box;
+	width: 600px;
+	border: 1px solid #767676;
+	margin: 0 auto 20px;
+	padding: 20px;
+	display: none;
+}
+.activity-desc {
+	/*font-weight: normal;*/
+	margin-bottom: 20px;
+}
+.activity-item {
+	box-sizing: border-box;
+	height: 100px;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #767676;
+}
+.activity-logo {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: none;
+	margin-right: 15px;
+}
+.activity-title {
+	line-height: 80px;
+	font-size: 15px;
+}
+.activity-link, .no-link {
+	width: 110px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 25px;
+	border: 1px solid #767676;
+	color: #333333;
+}
+.no-link {
+	border: 1px solid #E8E8E8;
+	background-color: #F7F9FA;
+	color: #989898;
+	cursor: not-allowed;
 }

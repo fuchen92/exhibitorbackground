@@ -135,12 +135,12 @@ $(function() {
     var isUpload = false;
 
     logoArea.hover(function() {
-        logoTip.removeAttr("style");
+    //	isUpload = (logoImg.attr("src") == "" ? false : true);
+    //		if(isUpload) {
+            logoTip.css("display", "flex");
+    //	}
     }, function() {
-        isUpload = (logoImg.attr("src") == "" ? false : true);
-        if(isUpload) {
-            logoTip.hide();
-        }
+        logoTip.removeAttr("style");
     });
 
     logoTip.on("click", function() {
@@ -177,13 +177,13 @@ $(function() {
             logoLarge.html('<img id="largeLogo" src="' + e.target.result + '">');
             var largeLogo = $("#largeLogo");
             largeLogo.cropper({
-                aspectRatio: 22/18,
+                aspectRatio: 168/74,
                 dragmode: 'move',//移动画布
                 minCropBoxWidth: 100,//裁剪框的最小宽度
                 crop: function(e) {
                     preview.html(largeLogo.cropper("getCroppedCanvas", {
-                        width: 220,
-                        height: 180
+                        width: 168,
+                        height: 74
                     }))
                 }
             })

@@ -6,14 +6,25 @@
     content: "";
     clear: both;
 }
+.menutitle-desc {
+	font-size: 14px;
+    color: #333333;
+    cursor: initial;
+}
+.menutitle-desc b {
+	color: #C30F23;
+}
 /********** 本页面的一些公共样式 **********/
 .form-group {
     margin-bottom: 15px;
     min-height: 20px;
+    overflow: hidden;
 }
 .form-label {
     display: block;
     font-size: 15px;
+    line-height: 20px;
+    min-height: 20px;
     color: #565656;
     margin-bottom: 5px;
 }
@@ -21,7 +32,8 @@
     overflow: hidden;
 }
 .form-item {
-    height: 65px;
+    /*height: 65px;*/
+   height: 90px;
 }
 .middle-item {
     width: 48%;
@@ -131,10 +143,12 @@
 .industry-category {
     box-sizing: border-box;
     position: absolute;
+    height: 500px;
     top: 100%;
     padding: 10px;
     background-color: #fff;
     box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+    overflow-y: scroll;
     display: none;
 }
 .industry-group {
@@ -175,8 +189,10 @@
 }
 .logo-area {
     position: relative;
-    width: 220px;
-    height: 180px;
+    /*width: 220px;*/
+    /*height: 180px;*/
+   	width: 168px;
+   	height: 74px;
     background-color: #F8F8F8;
     margin: 0 auto;
 }
@@ -184,7 +200,7 @@
     width: 100%;
     height: 100%;
     max-width: 100%;
-    display: none;
+    /*display: none;*/
 }
 .logo-tip {
     display: flex;
@@ -200,6 +216,7 @@
     color: #C30F23;
     z-index: 10;
     cursor: pointer;
+   	display: none;
 }
 
 
@@ -278,8 +295,10 @@
     display: none;
 }
 .preview {
-    width: 220px !important;
-    height: 180px !important;
+    /*width: 220px !important;*/
+    /*height: 180px !important;*/
+   	width: 168px !important;
+   	height: 74px !important;
     margin: 15px auto 0;
     background-color: aliceblue;
     overflow: hidden;
