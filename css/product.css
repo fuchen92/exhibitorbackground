@@ -56,7 +56,7 @@
     font-size: 15px;
     text-align: center;
     margin: 25px auto 0;
-    background-color: #C30F23;
+    background-color: #003a8c;
     color: #fff;
     cursor: pointer;
 }
@@ -173,8 +173,8 @@
    	height: 74px;*/
    	width: 100%;
    	height: auto;
-    max-width: 168px;
-    max-height: 74px;
+   	max-width: 168px;
+   	max-height: 74px;
     background-color: grey;
 }
 .product-desc, .product-descEn {
@@ -196,7 +196,7 @@
     cursor: pointer;   
 }
 .edit {
-    color: #C30F23;
+    color: #003a8c;
     margin-right: 10px;     
 }
 .moveup, .movedown {
@@ -233,8 +233,8 @@
 }
 .addProduct {
     height: 25px;
-    color: #C30F23;
-    border-bottom: 1px solid #C30F23;
+    color: #003a8c;
+    border-bottom: 1px solid #003a8c;
 }
 .attention {
     margin-top: 25px;
@@ -251,8 +251,8 @@
     font-size: 14px;
     line-height: 40px;
     text-align: center;
-    color: #C30F23;
-    border: 1px solid #C30F23;
+    color: #003a8c;
+    border: 1px solid #003a8c;
     background-color: #fff;
     cursor: pointer;
 }
@@ -346,7 +346,8 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
-    color: #C30F23;
+    /* color: #003a8c; */
+    color: #fff;
     z-index: 10;
     cursor: pointer;
 }
@@ -499,7 +500,7 @@
 .upload-content {
     /* width: 400px; */
     width: 300px;
-    margin: 0 auto;
+    margin: 30px auto 0;
 }
 .logo-large {
     /* width: 400px; */
@@ -519,7 +520,7 @@
     margin: 15px auto 0;
     text-align: center;
     color: #fff;
-    background-color: #C30F23;
+    background-color: #003a8c;
     border-radius: 2px;
     font-size: 14px;
     cursor: pointer;
@@ -560,12 +561,12 @@
 }
 .upload-confirm {
     margin-right: 20px;
-    background-color: #C30F23;
+    background-color: #003a8c;
     color: #fff;
     border-radius: 2px;
 }
 .upload-cancel {
-    border: 1px solid #C30F23;
-    color: #C30F23;
+    border: 1px solid #003a8c;
+    color: #003a8c;
     background-color: transparent;
 }

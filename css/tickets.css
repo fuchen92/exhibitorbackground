@@ -8,7 +8,13 @@
     overflow: hidden;
     margin-bottom: 15px;
 }
+.form-group::after {
+    display: block;
+    content: "";
+    clear: both;
+}
 .form-item {
+    position: relative;
     width: 45%;
     height: 65px;
 }
@@ -50,18 +56,99 @@
     margin-right: 8px;
     zoom: 1;
 }
+	/* 行业模拟下拉框 */
+.industrySelect {
+    box-sizing: border-box;
+    overflow: hidden;	
+    background: url(img/caret.png) #F8F8F8 right 10px center no-repeat;
+}
+.industryShow {
+    /* width: calc(100% - 6px);
+    width: -webkit-calc(100% - 6px);
+    width: -moz-calc(100% - 6px); */
+    width: 100%;
+    height: 100%;
+    line-height: 38px;
+    float: left;
+}
+.industryShow .industryTag {
+    line-height: 38px;
+}
+.dropdown-caret {
+    float: right;
+    width: 6px;
+    height: 10px;
+    border: 3px solid transparent;
+    border-top-color: black;
+    border-top-width: 7px;
+    margin: 7px -9px;
+    display: none;
+}
+.industryBox {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    height: 300px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-bottom: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+    display: none;
+}
+.industryBox.active {
+    display: block;
+}
+.industryGroup {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.industryLabel, .industryCategory {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.industryLabel {
+    width: 90px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+.industryCategory {
+    width: calc(100% - 95px);
+    width: -webkit-calc(100% - 95px);
+    width: -moz-calc(100% - 95px);
+    overflow: hidden;
+}
+.industryTag {
+    float: left;
+    line-height: 25px;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+}
 
 /***** 参会嘉宾登记  *****/
 .allot-desc, .staff-desc {
+	box-sizing: border-box;
     height: 45px;
-    line-height: 45px;
-    padding: 0 15px;
+    line-height: 25px;
+    padding: 10px 15px;
     color: #C30F23;
     background-color: #FDF3F5;
     margin-bottom: 25px;
 }
+.allot-desc:first-of-type {
+	height: 30px;
+	line-height: 20px;
+	margin-bottom: 0;
+	padding: 10px 15px 0;
+}
 .tickets-privilege-text {
     border-bottom: 1px solid #C30F23;
+    color: #C30F23;
     cursor: pointer;
 }
 .graybg {
@@ -124,7 +211,8 @@ tr td.companyCN, tr td.mobile, tr td.email {
     line-height: 30px;
     text-align: center;
     background-color: #fff;
-    color: #C30F23;
+    /* color: #C30F23; */
+    color: #003a8c;
     cursor: pointer;
 }
 .audit-status {
@@ -308,7 +396,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     display: block;
     width: 180px;
     height: 40px;
-    background-color: #C30F23;
+    background-color: #003a8c;
     color: #fff;
     text-align: center;
     font-size: 15px;
@@ -386,7 +474,7 @@ tr td.companyCN, tr td.mobile, tr td.email {
     line-height: 40px;
     border-radius: 2px;
     cursor: pointer;
-    background-color: #C30F23;
+    background-color: #003a8c;
     color: #fff;
 }
 #saveAllot {
@@ -395,8 +483,8 @@ tr td.companyCN, tr td.mobile, tr td.email {
 }
 #addAnother {
     background-color: #fff;
-    border: 1px solid #C30F23;
-    color: #C30F23;
+    border: 1px solid #003a8c;
+    color: #003a8c;
 }
 
 /***** 工作人员登记  *****/
@@ -413,8 +501,8 @@ tr td.companyCN, tr td.mobile, tr td.email {
     padding: 0 40px;
     font-size: 15px;
     background-color: #fff;
-    border: 1px solid #C30F23;
-    color: #C30F23;
+    border: 1px solid #003a8c;
+    color: #003a8c;
     border-radius: 2px;
 }
 

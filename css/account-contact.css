@@ -3,6 +3,10 @@
     font-size: 14px;
     color: #777777;
     margin-bottom: 20px;
+    color: #C30F23;
+    background-color: #FDF3F5;
+    line-height: 45px;
+    padding: 0 15px;
 }
 .form-group {
     margin-bottom: 15px;
@@ -39,7 +43,7 @@
     height: 40px;
     font-size: 15px;
     text-align: center;
-    background-color: #C30F23;
+    background-color: #003a8c;
     color: #fff;
     cursor: pointer;
 }
